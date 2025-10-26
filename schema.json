@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Haiba Enterprises",
+  "alternateName": "Haiba Enterprises WLL",
+  "url": "https://haiba.co",
+  "logo": "https://haiba.co/images/logo-5.png",
+  "description": "Integrating Industry Evolution With Digital Revolution. Industrial Solutions, Digital Transformation, AI-Empowerment, and Data Security.",
+  "sameAs": [
+    "https://www.linkedin.com/company/haiba-enterprises",
+    "https://twitter.com/haibaenterprises",
+    "https://www.facebook.com/haibaenterprises"
+  ],
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "addressCountry": "BH",
+      "addressLocality": "Manama",
+      "addressRegion": "Al Salmaniya",
+      "postalCode": "311",
+      "streetAddress": "Office 2269, Building 747, Road 1124, Block 311",
+      "name": "Haiba Enterprises WLL - Bahrain"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressCountry": "IN",
+      "addressLocality": "Nagpur",
+      "addressRegion": "Maharashtra",
+      "postalCode": "440002",
+      "streetAddress": "106-B, Kalimi Complex, Shantinagar",
+      "name": "KryptoMindz Technologies - India"
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+973-33185642",
+    "email": "enquiry@haiba.co"
+  },
+  "knowsAbout": [
+    "Industrial Solutions",
+    "Digital Transformation",
+    "AI-Empowerment",
+    "Data Security",
+    "Cloud Migration",
+    "ERP Solutions",
+    "CRM Solutions",
+    "Machine Learning",
+    "Process Automation",
+    "Technical Consultancy"
+  ],
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Bahrain"
+    },
+    {
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    },
+    {
+      "@type": "Country",
+      "name": "Saudi Arabia"
+    },
+    {
+      "@type": "Country",
+      "name": "Kuwait"
+    }
+  ],
+  "potentialAction": {
+    "@type": "CommunicateAction",
+    "target": "https://haiba.co/#contact"
+  }
+}
