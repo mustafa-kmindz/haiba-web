@@ -125,8 +125,14 @@ a:hover {
   gap: 0.75rem;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: #0154a0;
   transition: transform 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .logo:hover {
