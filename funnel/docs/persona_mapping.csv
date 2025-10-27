@@ -1,0 +1,9 @@
+recipient_name,recipient_role,recipient_company_type,persona_id,reasoning,cta_focus,expected_outcome
+John Smith,Founder,Startup,founder,Solo founder with pre-seed idea,Build prototype,Validates market fit
+Sarah Johnson,Innovation Manager,Tech Corp (10k+ employees),intrapreneur,Has 2 ideas she needs approval for,Get board approval,Secures innovation budget
+Mike Chen,CEO,Mid-size SaaS (50 people),company,Wants to innovate but risk-averse,Start pilot,Validates digital transformation
+Lisa Rodriguez,Engineering Manager,Series B SaaS,tech-team,Large backlog needs prioritization,Start validation,Kills assumptions
+Ahmed Hassan,Co-founder,Pre-seed,founder,Building first MVP,Build prototype,Achieves market validation
+Emma Wilson,Chief Innovation Officer,Fortune 500,intrapreneur,Managing innovation pipeline,Get POC,Internal innovation funding
+David Park,Product Manager,Mid-market Software,company,Testing new market segment,Start pilot,Reduces go-to-market risk
+Alex Thompson,VP Engineering,Growth-stage startup,tech-team,Feature backlog validation,Start validation,Improves feature prioritization
