@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thank you for your interest in Haiba. We're preparing your personalized plan.">
+  <title>Thank You - Haiba Enterprises</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #0154a0;
+      --accent: #0891b2;
+      --text-dark: #0f172a;
+      --text-gray: #64748b;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 600px;
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(1, 84, 160, 0.15);
+      text-align: center;
+      animation: slideUp 0.6s ease-out;
+    }
+    
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 3rem;
+      animation: bounce 0.8s ease-in-out;
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .message-box {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+      text-align: left;
+    }
+    
+    .message-box h3 {
+      color: #166534;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    .message-box p {
+      color: #4b5563;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .next-steps {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    
+    .next-steps h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .steps-list {
+      list-style: none;
+      counter-reset: step-counter;
+    }
+    
+    .steps-list li {
+      counter-increment: step-counter;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+    
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      box-shadow: 0 4px 12px rgba(1, 84, 160, 0.25);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(1, 84, 160, 0.35);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .btn-secondary:hover {
+      background: #f0f9ff;
+    }
+    
+    .contact-info {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+    
+    .contact-info p {
+      margin: 0.5rem 0;
+    }
+    
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.75rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Success Icon -->
+    <div class="success-icon">✓</div>
+
+    <!-- Main Message -->
+    <h1>Your FREE POC Awaits! 🚀</h1>
+    <p class="subtitle">Thank you for trusting us with your idea. Here's what happens next...</p>
+
+    <!-- Success Message -->
+    <div class="message-box">
+      <h3>✓ Your Idea Has Been Received</h3>
+      <p>Our innovation team is reviewing your submission right now. We're excited to see what you're building! Check your email for a message from our team.</p>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="next-steps">
+      <h3>What's Next?</h3>
+      <ol class="steps-list">
+        <li><strong>Initial Review</strong> - Our team analyzes your idea (24 hours)</li>
+        <li><strong>Kickoff Call</strong> - 30-minute discovery to lock down scope and timeline</li>
+        <li><strong>POC Development</strong> - We build your prototype (2-4 weeks)</li>
+        <li><strong>Live Demo</strong> - See your idea working in action!</li>
+        <li><strong>Validation & Feedback</strong> - User testing and market analysis</li>
+        <li><strong>Go/No-Go Decision</strong> - Clear insights on next steps</li>
+        <li><strong>Scale or Pivot</strong> - Move to production or iterate on learnings</li>
+      </ol>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-buttons">
+      <a href="poc.html" class="btn btn-primary">Learn About POC Process</a>
+      <a href="../index.html" class="btn btn-secondary">Back to Home</a>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <p><strong>Questions? Let's Talk!</strong></p>
+      <p>📞 <a href="tel:+97333185642">+973-33185642</a></p>
+      <p>📧 <a href="mailto:enquiry@haiba.co">enquiry@haiba.co</a></p>
+      <p style="margin-top: 1rem; font-size: 0.85rem; color: #999;">
+        We'll be in touch within 24 hours to schedule your kickoff call. Expect magic! ✨
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Log thank you page view (conversion)
+    console.log('[FUNNEL] Thank you page viewed - LEAD CONVERTED');
+    
+    // Get email from URL parameter if available
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    
+    if (email) {
+      console.log('[FUNNEL] Lead email:', email);
+    }
+    
+    // Track this as a conversion event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        'conversion_label': 'haiba_lead_captured',
+        'value': 1.0,
+        'currency': 'USD'
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover how Haiba can transform your industrial operations. Get a personalized consultation to unlock efficiency and cost savings.">
+  <meta name="keywords" content="Industrial Transformation, AI Solutions, Digital Transformation, Consultation">
+  <meta name="author" content="Haiba Enterprises">
+  <title>Transform Your Operations - Haiba Enterprises</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #0154a0;
+      --accent: #0891b2;
+      --text-dark: #0f172a;
+      --text-gray: #64748b;
+      --bg-light: #f8fafc;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-dark);
+      background-color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* ===== HEADER ===== */
+    header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: slideInDown 0.6s ease-out;
+    }
+    
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-link:hover {
+      transform: scale(1.05);
+    }
+    
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      animation: fadeInUp 1s ease-out 0.2s both;
+      line-height: 1.8;
+    }
+    
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero-form {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      animation: slideInRight 0.8s ease-out 0.2s both;
+    }
+    
+    .hero-form h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .hero-form p {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(1, 84, 160, 0.3);
+    }
+    
+    .form-success {
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
+      color: #166534;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    
+    .form-success.show {
+      display: block;
+      animation: slideInDown 0.4s ease-out;
+    }
+    
+    /* ===== BENEFITS SECTION ===== */
+    .benefits {
+      padding: 4rem 0;
+      background: var(--bg-light);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .benefit-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--accent);
+      transition: all 0.3s ease;
+      animation: fadeInScale 0.8s ease-out;
+    }
+    
+    .benefit-card:hover {
+      box-shadow: 0 8px 24px rgba(8, 145, 178, 0.15);
+      transform: translateY(-4px);
+    }
+    
+    .benefit-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .benefit-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+    }
+    
+    .benefit-card p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    /* ===== PROOF SECTION ===== */
+    .proof {
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .proof-stat {
+      display: inline-block;
+      margin: 0 2rem;
+      animation: fadeInScale 0.8s ease-out;
+    }
+    
+    .proof-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .proof-label {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-top: 0.5rem;
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .bottom-cta {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+    
+    .bottom-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .bottom-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1a1a2e;
+      color: #ccc;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      
+      .cta-group {
+        flex-direction: column;
+      }
+      
+      .proof-stat {
+        display: block;
+        margin: 1.5rem 0;
+      }
+      
+      .bottom-cta h2 {
+        font-size: 1.5rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.75rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero {
+        padding: 2rem 0;
+      }
+      
+      .hero-text h1 {
+        font-size: 1.75rem;
+      }
+      
+      .hero-form {
+        padding: 1.5rem;
+      }
+      
+      .btn {
+        padding: 0.75rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo-link">
+        <img src="../images/logo-5.png" alt="Haiba Logo" style="height: 40px;">
+        <span>HAIBA</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <!-- Hero Text -->
+        <div class="hero-text">
+          <h1>Get Your Idea Proof-of-Concept for FREE</h1>
+          <p>Have an idea you want to test? <strong>Zero risk. Zero investment.</strong> We'll build a working proof-of-concept to validate your vision. If it works, we scale it to production. Simple as that.</p>
+          <div style="background: rgba(255,255,255,0.15); border-left: 4px solid white; padding: 1rem; border-radius: 6px; margin: 1.5rem 0; font-size: 0.95rem;">
+            ✨ <strong>FREE POC includes:</strong> Concept design, prototype build, live demo, and a clear go/no-go decision
+          </div>
+          <div class="cta-group">
+            <a href="booking.html" class="btn btn-primary" style="background: white; color: var(--primary); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+              Book Your Free Call →
+            </a>
+          </div>
+        </div>
+
+        <!-- Booking CTA -->
+        <div class="hero-form" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #22c55e;">
+          <div style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📅</div>
+            <h3 style="color: #166534;">Book Your Kickoff Call</h3>
+            <p style="color: #4b5563; margin-bottom: 1.5rem;">
+              Skip the form. Let's talk directly about your idea.
+            </p>
+            
+            <div style="background: white; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: left;">
+              <p style="color: #166534; font-weight: 600; margin-bottom: 0.75rem;">✓ What We'll Discuss:</p>
+              <ul style="list-style: none; color: #4b5563; font-size: 0.9rem;">
+                <li style="margin-bottom: 0.5rem;">• Your innovation idea & market opportunity</li>
+                <li style="margin-bottom: 0.5rem;">• Technical requirements & POC scope</li>
+                <li style="margin-bottom: 0.5rem;">• Timeline & investment for production</li>
+                <li>• All your questions answered</li>
+              </ul>
+            </div>
+
+            <p style="color: #4b5563; font-size: 0.85rem; margin-bottom: 1.5rem;">
+              ⏱️ 30 minutes · 📞 Google Meet · 🎯 100% confidential
+            </p>
+
+            <a href="booking.html" class="btn btn-primary" style="background: linear-gradient(135deg, #166534, #22c55e); color: white; display: inline-block; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);">
+              Pick Your Time Slot Now →
+            </a>
+
+            <p style="font-size: 0.75rem; color: #999; margin-top: 1rem;">
+              No credit card. No sales pitch. Just innovation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section class="benefits">
+    <div class="container">
+      <div class="section-header">
+        <h2>Your POC Journey: From Idea to Reality</h2>
+        <p>A risk-free path to validate your vision and scale to production</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">💡</div>
+          <h3>Phase 1: Free POC</h3>
+          <p>We build a working prototype of your idea at zero cost. See your vision come to life with a live, functioning demo. No strings attached.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">✅</div>
+          <h3>Phase 2: Validation</h3>
+          <p>Test your concept with real data. Collect feedback. Decide if it's market-ready. We provide clear go/no-go insights with actionable next steps.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🚀</div>
+          <h3>Phase 3: Scale to Production</h3>
+          <p>If your POC succeeds, we scale it to enterprise-grade production. Advanced features, security, scalability—everything your market demands.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">📊</div>
+          <h3>Phase 4: Go-to-Market</h3>
+          <p>We help you present to stakeholders, investors, or launch publicly. Full support with marketing, positioning, and distribution strategy.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Phase 5: Startup Acceleration</h3>
+          <p>Turn your startup vision into reality. We handle development, infrastructure, and operations so you can focus on growth and sales.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🌍</div>
+          <h3>Phase 6: Global Scale</h3>
+          <p>From local to global. We help you reach international markets with localization, compliance, and multi-region deployment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF SECTION -->
+  <section class="proof">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 2rem; color: var(--primary);">Success Stories: From POC to Production</h2>
+      
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin-bottom: 3rem;">
+        <div class="proof-stat">
+          <div class="proof-number">150+</div>
+          <div class="proof-label">POCs Built & Validated</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-number">89%</div>
+          <div class="proof-label">POC to Production Conversion</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-number">42</div>
+          <div class="proof-label">Startups Scaled Successfully</div>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #22c55e; border-radius: 12px; padding: 2rem; text-align: left; max-width: 800px; margin: 0 auto;">
+        <p style="color: #166534; font-size: 1rem; line-height: 1.8;">
+          <strong>"We had an idea but no clue how to build it. Haiba's free POC showed us exactly what was possible. We saw it working, got excited, went to production, and now we're selling to enterprise clients. Best decision ever."</strong>
+        </p>
+        <p style="color: #4b5563; font-size: 0.95rem; margin-top: 1rem;">
+          — Ahmed Al-Mansouri, CEO, DataFlow Systems (UAE)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="container">
+    <div class="bottom-cta">
+      <h2>Turn Your Idea Into a Working Reality</h2>
+      <p>30 minutes on a call. That's all it takes to get started.</p>
+      <a href="booking.html" class="btn btn-primary" style="background: white; color: var(--primary); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+        Book Your Kickoff Call Now
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Haiba Enterprises. All rights reserved. | <a href="../index.html">Home</a> | <a href="../index.html/#about">About</a> | <a href="../solutions.html">Solutions</a></p>
+  </footer>
+
+  <script>
+    // Track page views
+    console.log('[FUNNEL] Landing page viewed');
+
+    // Track button clicks
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        console.log('[FUNNEL] CTA button clicked - navigating to booking');
+      });
+    });
+
+    // Track scroll depth
+    let maxScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent > maxScroll) {
+        maxScroll = scrollPercent;
+        if (maxScroll > 50) {
+          console.log('[FUNNEL] User highly engaged - 50% page viewed');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

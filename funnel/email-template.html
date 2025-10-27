@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haiba Enterprises - Transform Your Operations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-collapse: collapse;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0154a0 0%, #0891b2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 0;
+        }
+        
+        .header-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .header-tagline {
+            font-size: 13px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        /* Main Content */
+        .content {
+            padding: 40px 30px;
+            background-color: #ffffff;
+        }
+        
+        .greeting {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0154a0;
+            margin-bottom: 20px;
+        }
+        
+        .intro-text {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        /* Feature Highlight */
+        .highlight-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 100%);
+            border-left: 4px solid #0891b2;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0154a0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight-title::before {
+            content: "✨";
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .highlight-description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Solutions List */
+        .solutions-list {
+            margin: 30px 0;
+        }
+        
+        .solution-item {
+            display: block;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .solution-item::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #0891b2;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0154a0 0%, #0891b2 100%);
+            color: white;
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(1, 84, 160, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(1, 84, 160, 0.3);
+        }
+        
+        .cta-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 15px;
+        }
+        
+        /* Secondary CTA */
+        .secondary-text {
+            font-size: 13px;
+            color: #888;
+            margin-top: 20px;
+        }
+        
+        .secondary-text a {
+            color: #0891b2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Social Proof */
+        .proof-section {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 25px 0;
+            font-size: 13px;
+            color: #666;
+            border-left: 3px solid #0891b2;
+        }
+        
+        .proof-section strong {
+            color: #0154a0;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1a1a2e;
+            color: #ccc;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 3px solid #0891b2;
+        }
+        
+        .footer-section {
+            margin-bottom: 15px;
+        }
+        
+        .footer-title {
+            color: #0891b2;
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: #0891b2;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        
+        .footer-contact {
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        
+        .footer-contact a {
+            color: #0891b2;
+            text-decoration: none;
+        }
+        
+        .social-links {
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #0891b2;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin: 0 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .unsubscribe {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .unsubscribe a {
+            color: #0891b2;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .content {
+                padding: 25px 15px;
+            }
+            
+            .greeting {
+                font-size: 18px;
+            }
+            
+            .cta-button {
+                display: block;
+                width: 100%;
+                padding: 16px 20px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .header-logo {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table class="email-container" cellpadding="0" cellspacing="0" width="100%">
+        <!-- HEADER -->
+        <tr>
+            <td class="header">
+                <div class="header-logo">🚀 HAIBA</div>
+                <div class="header-tagline">Transform Your Industrial Operations</div>
+            </td>
+        </tr>
+        
+        <!-- MAIN CONTENT -->
+        <tr>
+            <td class="content">
+                <p class="greeting">Hi there! 👋</p>
+                
+                <p class="intro-text">
+                    Have an idea you want to test? We build proof-of-concepts FOR FREE. No risk. No investment. Just innovation.
+                </p>
+                
+                <!-- Highlight -->
+                <div class="highlight-section">
+                    <div class="highlight-title">What's a FREE POC?</div>
+                    <div class="highlight-description">
+                        You describe your idea. We build a working prototype. You see it live, test it, decide if it's market-ready. If yes, we scale it to production. If no, you learned for free.
+                    </div>
+                </div>
+                
+                <!-- What We Do -->
+                <p style="font-size: 15px; font-weight: 600; color: #0154a0; margin: 25px 0 15px 0;">Your POC Journey:</p>
+                <div class="solutions-list">
+                    <span class="solution-item"><strong>Phase 1:</strong> You describe your idea</span>
+                    <span class="solution-item"><strong>Phase 2:</strong> We build a working prototype (FREE)</span>
+                    <span class="solution-item"><strong>Phase 3:</strong> You test & validate with real data</span>
+                    <span class="solution-item"><strong>Phase 4:</strong> Go/no-go decision with clear insights</span>
+                    <span class="solution-item"><strong>Phase 5:</strong> If successful, scale to production</span>
+                </div>
+                
+                <!-- Social Proof -->
+                <div class="proof-section">
+                    <strong>Real Results:</strong> 150+ POCs built. 89% go to full production. 42 startups scaled. Average time from POC to revenue: 6 months.
+                </div>
+                
+                <!-- CTA -->
+                <div class="cta-section">
+                    <p style="font-size: 14px; font-weight: 600; color: #0154a0; margin-bottom: 20px;">
+                        Ready to see your idea come to life?
+                    </p>
+                    <a href="https://haiba.co/landing" class="cta-button">
+                        Get Your FREE POC →
+                    </a>
+                    <p class="cta-text">
+                        100% free. No credit card. No commitment. Just innovation.
+                    </p>
+                    <p class="secondary-text">
+                        Or <a href="https://haiba.co/solutions.html">explore our services</a> to see what's possible.
+                    </p>
+                </div>
+                
+                <!-- Closing -->
+                <p class="intro-text" style="margin-top: 30px;">
+                    Whether you're an entrepreneur with a startup idea, an intrapreneur within an organization, or someone who just wants to bring their dream to life—we're here to help. Let's build something great together.
+                </p>
+                
+                <p class="intro-text" style="color: #666; margin-top: 25px;">
+                    Best regards,<br>
+                    <strong style="color: #0154a0;">The Haiba Team</strong><br>
+                    <em style="font-size: 12px; color: #999;">Integrating Industry Evolution With Digital Revolution</em>
+                </p>
+            </td>
+        </tr>
+        
+        <!-- FOOTER -->
+        <tr>
+            <td class="footer">
+                <div class="footer-section">
+                    <div class="footer-title">HAIBA ENTERPRISES</div>
+                    <div>Transforming Industrial Operations Through AI & Digital Innovation</div>
+                </div>
+                
+                <div class="footer-section">
+                    <div class="footer-contact">
+                        <a href="tel:+97333185642">📞 +973-33185642</a><br>
+                        <a href="mailto:enquiry@haiba.co">📧 enquiry@haiba.co</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section footer-links">
+                    <a href="https://haiba.co">Home</a> |
+                    <a href="https://haiba.co/#about">About</a> |
+                    <a href="https://haiba.co/solutions.html">Solutions</a> |
+                    <a href="https://haiba.co/#contact">Contact</a>
+                </div>
+                
+                <div class="unsubscribe">
+                    <p>&copy; 2025 Haiba Enterprises. All rights reserved.</p>
+                    <p style="margin-top: 10px;">
+                        You received this email because you're in our network.<br>
+                        <a href="#">Manage preferences</a> | <a href="#">Unsubscribe</a>
+                    </p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
