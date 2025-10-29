@@ -74,5 +74,38 @@
   "potentialAction": {
     "@type": "CommunicateAction",
     "target": "https://haiba.co/#contact"
-  }
+  },
+  "offers": [
+    {
+      "@type": "Service",
+      "name": "Free Proof of Concept (POC)",
+      "description": "Turn your innovative idea into reality with a zero-cost, zero-risk proof of concept from Haiba Enterprises",
+      "url": "https://haiba.co/funnel/poc.html",
+      "areaServed": [
+        "BH",
+        "IN",
+        "AE",
+        "SA",
+        "KW"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Free POC Kickoff Call",
+      "description": "30-minute consultation call to validate your innovation idea",
+      "url": "https://haiba.co/funnel/booking.html",
+      "duration": "PT30M",
+      "eventAttendanceMode": "OnlineEventAttendanceMode",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
 }
