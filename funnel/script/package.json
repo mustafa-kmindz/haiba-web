@@ -6,6 +6,7 @@
   "scripts": {
     "send-cli": "node acs-email-sender.js --csv=recipients.csv",
     "send-web": "node acs-email-sender-web.js",
+    "convert-cli": "node html-to-image.js",
     "start": "node acs-email-sender-web.js",
     "test": "echo \"Test with sample CSV: npm run send-cli\" && exit 0"
   },
@@ -23,7 +24,9 @@
     "csv-parser": "^3.0.0",
     "dotenv": "^16.0.0",
     "express": "^4.18.0",
-    "multer": "1.4.5-lts.1"
+    "minimist": "^1.2.8",
+    "multer": "1.4.5-lts.1",
+    "puppeteer": "^23.0.0"
   },
   "devDependencies": {},
   "engines": {

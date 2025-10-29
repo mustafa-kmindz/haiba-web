@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulf Innovation Leaders - From Mind to Market - Haiba</title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+        
+        .wrapper {
+            max-width: 700px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* GULF REGION BANNER */
+        .gulf-banner {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4c1 100%);
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1a1a1a;
+            border-bottom: 2px solid #b8860b;
+        }
+        
+        .gulf-badge {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #d4af37;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            font-size: 11px;
+        }
+        
+        /* HERO GRADIENT SECTION */
+        .hero {
+            background: linear-gradient(135deg, #0a4d8f 0%, #062e4a 100%);
+            padding: 70px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-icon-large {
+            font-size: 100px;
+            line-height: 1;
+            margin-bottom: 20px;
+            animation: bounce-gentle 3s ease-in-out infinite;
+        }
+        
+        @keyframes bounce-gentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-title {
+            font-size: 44px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 12px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
+        .hero-subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.95);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        /* MAIN CONTENT */
+        .main {
+            padding: 50px 45px;
+        }
+        
+        .greeting {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0a4d8f, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .intro {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 25px;
+        }
+        
+        .intro strong {
+            color: #0a4d8f;
+            font-weight: 700;
+        }
+        
+        /* GULF COUNTRIES SHOWCASE */
+        .gulf-countries {
+            background: linear-gradient(135deg, #e0f2fe15 0%, #fef3c7 100%);
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #d4af37;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .gulf-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0a4d8f;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .gulf-countries-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .gulf-country {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid #e2e8f0;
+            padding: 14px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .gulf-country-flag {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        /* TECH FOCUS SECTION */
+        .tech-focus {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e0f2fe 100%);
+            border: 1px solid #e2e8f0;
+            border-top: 2px solid #0a4d8f;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .tech-focus-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0a4d8f;
+            margin-bottom: 16px;
+        }
+        
+        .tech-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .tech-item {
+            padding: 12px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+        
+        .tech-item-icon {
+            font-size: 18px;
+            color: #d4af37;
+        }
+        
+        /* THE PROBLEM/SOLUTION */
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 35px 0;
+        }
+        
+        .problem-box, .solution-box {
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .problem-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .solution-box {
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 4px solid #d4af37;
+        }
+        
+        .box-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .problem-box .box-title {
+            color: #ef4444;
+        }
+        
+        .solution-box .box-title {
+            color: #d4af37;
+        }
+        
+        .box-content {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #475569;
+            font-weight: 500;
+        }
+        
+        /* FEATURES WITH ICONS */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: linear-gradient(135deg, #f0f7ff 0%, #fef3c7 100%);
+            padding: 22px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #d0f0ff;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            background: linear-gradient(135deg, #e0f2fe 0%, #fcd34d 100%);
+            border-color: #0a4d8f;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(10, 77, 143, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .feature-value {
+            font-size: 22px;
+            font-weight: 900;
+            color: #0a4d8f;
+            margin-bottom: 4px;
+        }
+        
+        .feature-label {
+            font-size: 12px;
+            color: #0c4a6e;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        /* ROADMAP */
+        .roadmap {
+            background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%);
+            border: 1px solid #e2e8f0;
+            border-top: 2px solid #0a4d8f;
+            border-radius: 10px;
+            padding: 28px;
+            margin: 30px 0;
+        }
+        
+        .roadmap-title {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0a4d8f;
+            margin-bottom: 18px;
+        }
+        
+        .roadmap-steps {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+        }
+        
+        .step {
+            flex: 1;
+            text-align: center;
+            font-size: 12px;
+            color: #1e293b;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #0a4d8f, #d4af37);
+            color: white;
+            border-radius: 50%;
+            font-weight: 800;
+            line-height: 32px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .step-label {
+            display: block;
+            margin-top: 6px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+        
+        /* EXCLUSIVITY BOX */
+        .exclusivity-box {
+            background: linear-gradient(135deg, #fef3c720 0%, #e0f2fe20 100%);
+            border: 2px solid #d4af37;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .exclusivity-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #0a4d8f;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .exclusivity-content {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #475569;
+            font-weight: 500;
+        }
+        
+        .exclusivity-content strong {
+            color: #0a4d8f;
+            font-weight: 700;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 35px 25px;
+            background: linear-gradient(135deg, #e0f2fe20 0%, #fef3c720 100%);
+            border: 2px dashed #0a4d8f;
+            border-radius: 12px;
+        }
+        
+        .cta-pre {
+            font-size: 12px;
+            color: #0c4a6e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0a4d8f 0%, #0c6b9b 100%);
+            color: white;
+            padding: 18px 55px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(10, 77, 143, 0.25);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px rgba(10, 77, 143, 0.35);
+        }
+        
+        .cta-post {
+            font-size: 12px;
+            color: #0c4a6e;
+            margin-top: 15px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-top: 2px solid #0a4d8f;
+            padding: 40px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .footer-title {
+            color: #0a4d8f;
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-text {
+            color: #475569;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        
+        .footer-contact {
+            margin: 12px 0;
+        }
+        
+        .footer-contact a {
+            color: #0a4d8f;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 3px;
+        }
+        
+        .footer-divider {
+            height: 1px;
+            background: #cbd5e1;
+            margin: 15px 0;
+        }
+        
+        .footer-links {
+            margin: 12px 0;
+        }
+        
+        .footer-links a {
+            color: #0a4d8f;
+            text-decoration: none;
+            margin: 0 5px;
+            font-weight: 700;
+        }
+        
+        .footer-bottom {
+            margin-top: 15px;
+            font-size: 11px;
+            color: #64748b;
+        }
+        
+        .footer-bottom a {
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            .main {
+                padding: 30px 20px;
+            }
+            
+            .hero {
+                padding: 50px 20px;
+            }
+            
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-icon-large {
+                font-size: 70px;
+            }
+            
+            .problem-solution, .features-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .gulf-countries-grid, .tech-items {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .roadmap-steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- GULF REGION BANNER -->
+        <div class="gulf-banner">
+            <span class="gulf-badge">⭐ GULF EXCLUSIVE</span>
+            LIMITED OFFER FOR GULF REGION INNOVATORS
+        </div>
+        
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-icon-large">🏙️</div>
+                <h1 class="hero-title">Gulf Innovation Leaders</h1>
+                <p class="hero-subtitle">Transform Your Vision into Reality in 4 Weeks</p>
+            </div>
+        </div>
+        
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <h2 class="greeting">Welcome, Visionary Leader</h2>
+            
+            <p class="intro">
+                You're leading innovation in the Gulf. You see the future—<strong>AI, digital transformation, emerging technologies.</strong> You know the opportunity is now. Your only challenge? <strong>Moving from vision to execution at Gulf speed.</strong>
+            </p>
+            
+            <!-- GULF COUNTRIES SHOWCASE -->
+            <div class="gulf-countries">
+                <div class="gulf-title">🌍 Exclusively Available In</div>
+                <div class="gulf-countries-grid">
+                    <div class="gulf-country">
+                        <div class="gulf-country-flag">🇦🇪</div>
+                        <div>UAE</div>
+                    </div>
+                    <div class="gulf-country">
+                        <div class="gulf-country-flag">🇸🇦</div>
+                        <div>Saudi Arabia</div>
+                    </div>
+                    <div class="gulf-country">
+                        <div class="gulf-country-flag">🇶🇦</div>
+                        <div>Qatar</div>
+                    </div>
+                    <div class="gulf-country">
+                        <div class="gulf-country-flag">🇰🇼</div>
+                        <div>Kuwait</div>
+                    </div>
+                    <div class="gulf-country">
+                        <div class="gulf-country-flag">🇧🇭</div>
+                        <div>Bahrain</div>
+                    </div>
+                    <div class="gulf-country">
+                        <div class="gulf-country-flag">🇴🇲</div>
+                        <div>Oman</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TECH FOCUS -->
+            <div class="tech-focus">
+                <div class="tech-focus-title">🚀 What We Focus On</div>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <span class="tech-item-icon">🤖</span>
+                        <span>AI & Machine Learning</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-item-icon">💻</span>
+                        <span>Digital Transformation</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-item-icon">🏭</span>
+                        <span>Industrial Solutions</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-item-icon">☁️</span>
+                        <span>Cloud Solutions</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-item-icon">🔐</span>
+                        <span>Enterprise Security</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-item-icon">📊</span>
+                        <span>Data Analytics</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PROBLEM vs SOLUTION -->
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 35px 0;">
+                <tr>
+                    <td width="50%" style="padding: 0 10px 0 0; vertical-align: top;">
+                        <div style="padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; background: rgba(239, 68, 68, 0.08); border-left: 4px solid #ef4444;">
+                            <div style="font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; color: #ef4444;">❌ The Challenge</div>
+                            <div style="font-size: 13px; line-height: 1.7; color: #475569; font-weight: 500;">
+                                Great ideas. Market pressure. Global competition. Time is slipping away. Competitors won't wait.
+                            </div>
+                        </div>
+                    </td>
+                    <td width="50%" style="padding: 0 0 0 10px; vertical-align: top;">
+                        <div style="padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; background: rgba(212, 175, 55, 0.08); border-left: 4px solid #d4af37;">
+                            <div style="font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; color: #d4af37;">✓ The Answer</div>
+                            <div style="font-size: 13px; line-height: 1.7; color: #475569; font-weight: 500;">
+                                Working prototype. Production-ready code. Real data. 4 weeks. Your competitive advantage starts now.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- FEATURES GRID -->
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 30px 0;">
+                <tr>
+                    <td width="33%" style="padding: 15px; text-align: center; vertical-align: top;">
+                        <div style="background: #f0f7ff; padding: 22px 10px; border-radius: 10px; border: 1px solid #d0f0ff;">
+                            <div style="font-size: 36px; margin-bottom: 10px;">⚡</div>
+                            <div style="font-size: 22px; font-weight: 900; color: #0a4d8f; margin-bottom: 4px;">4 Weeks</div>
+                            <div style="font-size: 12px; color: #0c4a6e; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 700; line-height: 1.4;">To Market Ready</div>
+                        </div>
+                    </td>
+                    <td width="33%" style="padding: 15px; text-align: center; vertical-align: top;">
+                        <div style="background: #f0f7ff; padding: 22px 10px; border-radius: 10px; border: 1px solid #d0f0ff;">
+                            <div style="font-size: 36px; margin-bottom: 10px;">💎</div>
+                            <div style="font-size: 22px; font-weight: 900; color: #0a4d8f; margin-bottom: 4px;">100%</div>
+                            <div style="font-size: 12px; color: #0c4a6e; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 700; line-height: 1.4;">IP Ownership</div>
+                        </div>
+                    </td>
+                    <td width="33%" style="padding: 15px; text-align: center; vertical-align: top;">
+                        <div style="background: #f0f7ff; padding: 22px 10px; border-radius: 10px; border: 1px solid #d0f0ff;">
+                            <div style="font-size: 36px; margin-bottom: 10px;">🔒</div>
+                            <div style="font-size: 22px; font-weight: 900; color: #0a4d8f; margin-bottom: 4px;">NDA</div>
+                            <div style="font-size: 12px; color: #0c4a6e; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 700; line-height: 1.4;">Protected</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- ROADMAP -->
+            <div class="roadmap">
+                <div class="roadmap-title">✓ Your 4-Week Transformation</div>
+                <div class="roadmap-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Describe</div>
+                        <div>Share your vision</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Build</div>
+                        <div>We architect & code</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Test</div>
+                        <div>Real world validation</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Own</div>
+                        <div>Full IP yours</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EXCLUSIVITY -->
+            <div class="exclusivity-box">
+                <div class="exclusivity-title">⭐ Gulf-Exclusive Offer</div>
+                <div class="exclusivity-content">
+                    This limited offer is <strong>exclusively available for innovators in the Gulf region only</strong>. We're building deep partnerships with forward-thinking leaders who understand the value of rapid innovation and digital transformation. <strong>This is your window.</strong>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta-section">
+                <div class="cta-pre">Ready to Lead the Gulf's Digital Future?</div>
+                <a href="https://haiba.co/funnel/landing.html" class="cta-button">
+                    Start Your Prototype Now →
+                </a>
+                <div class="cta-post">
+                    Gulf Only • Confidential • NDA Protected • Full IP Ownership • Starts This Week
+                </div>
+            </div>
+            
+            <p class="intro" style="text-align: center; font-size: 13px; color: #0c4a6e;">
+                or <a href="https://haiba.co/solutions.html" style="color: #0a4d8f; font-weight: 700; text-decoration: none;">see how other Gulf leaders transformed their vision →</a>
+            </p>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-title">🚀 Haiba Enterprises</div>
+            <div class="footer-text">
+                Serving the Gulf's most ambitious innovators. NDA protected. Zero compromise on quality or speed.
+            </div>
+            
+            <div class="footer-contact">
+                <a href="tel:+97333185642">📞 +973-33185642</a> •
+                <a href="mailto:enquiry@haiba.co">📧 enquiry@haiba.co</a>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-links">
+                <a href="https://haiba.co">Home</a> •
+                <a href="https://haiba.co/solutions.html">Solutions</a> •
+                <a href="https://haiba.co/funnel/poc.html">How It Works</a>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2025 Haiba Enterprises. All rights reserved.<br>
+                <a href="#">Manage preferences</a> | <a href="#">Unsubscribe</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
