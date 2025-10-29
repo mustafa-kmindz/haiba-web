@@ -2,12 +2,14 @@
 
 /**
  * HTML to Image Converter
- * Converts HTML email templates to PNG/JPEG/WebP images
+ * Converts HTML email templates or remote pages to PNG/JPEG/WebP images
  * 
  * Usage:
- *   node html-to-image.js <input-file.html> [output-file.png] [options]
+ *   node html-to-image.js <input-file.html|url> [output-file.png] [options]
  *   node html-to-image.js ../email-templates/email-01-founder.html output.png
  *   node html-to-image.js ../email-templates/email-01-founder.html output.jpg --format=jpeg --quality=95
+ *   node html-to-image.js https://example.com output.png
+ *   node html-to-image.js https://example.com/page output.jpg --format=jpeg --quality=95
  */
 
 const puppeteer = require('puppeteer');
@@ -27,12 +29,14 @@ async function convertHtmlToImage() {
 
     // Validation
     if (!inputFile) {
-        console.error('❌ Error: Input HTML file is required');
+        console.error('❌ Error: Input HTML file or URL is required');
         console.error('\nUsage:');
-        console.error('  node html-to-image.js <input.html> [output.png] [options]');
+        console.error('  node html-to-image.js <input.html|url> [output.png] [options]');
         console.error('\nExamples:');
         console.error('  node html-to-image.js ../email-templates/email-01-founder.html output.png');
         console.error('  node html-to-image.js ../email-templates/email-02-intrapreneur.html output.jpg --format=jpeg --quality=95');
+        console.error('  node html-to-image.js https://example.com output.png');
+        console.error('  node html-to-image.js https://example.com/page output.jpg --format=jpeg --quality=95');
         console.error('\nOptions:');
         console.error('  --format=png|jpeg|webp     Output format (default: png)');
         console.error('  --quality=1-100            Image quality (default: 90)');
@@ -40,11 +44,12 @@ async function convertHtmlToImage() {
         console.error('  --height=px                Viewport height (default: 1200)');
         console.error('  --full-page                Capture full scrollable height');
         console.error('  --crop-to-content          Crop to .wrapper element only (no background)');
+        console.error('  --timeout=ms               Navigation timeout in milliseconds (default: 30000)');
         process.exit(1);
     }
 
-    // Resolve file paths
-    const inputPath = path.resolve(inputFile);
+    // Detect if input is a URL or file path
+    const isUrl = /^https?:\/\//.test(inputFile);
     
     // Create output directory if it doesn't exist
     const scriptDir = path.dirname(__filename);
@@ -60,13 +65,21 @@ async function convertHtmlToImage() {
             outputPath = path.resolve(outputFile);
         }
     } else {
-        // Default to output folder with same name as input file
-        outputPath = path.resolve(defaultOutputDir, `${path.parse(inputFile).name}.png`);
+        // Default to output folder with sanitized name
+        let defaultFileName;
+        if (isUrl) {
+            // For URLs, use domain name or sanitize the URL
+            const urlObj = new URL(inputFile);
+            defaultFileName = urlObj.hostname.replace(/\./g, '-') + '.png';
+        } else {
+            defaultFileName = `${path.parse(inputFile).name}.png`;
+        }
+        outputPath = path.resolve(defaultOutputDir, defaultFileName);
     }
 
-    // Check if input file exists
-    if (!fs.existsSync(inputPath)) {
-        console.error(`❌ Error: Input file not found: ${inputPath}`);
+    // Check if input file exists (only for local files)
+    if (!isUrl && !fs.existsSync(path.resolve(inputFile))) {
+        console.error(`❌ Error: Input file not found: ${path.resolve(inputFile)}`);
         process.exit(1);
     }
 
@@ -84,6 +97,7 @@ async function convertHtmlToImage() {
     const height = parseInt(args.height) || DEFAULT_HEIGHT;
     const fullPage = args['full-page'] || false;
     const cropToContent = args['crop-to-content'] || false;
+    const timeout = parseInt(args.timeout) || 30000;
 
     // Validate format
     if (!['png', 'jpeg', 'webp'].includes(format)) {
@@ -93,7 +107,7 @@ async function convertHtmlToImage() {
 
     try {
         console.log(`📄 Converting HTML to image...`);
-        console.log(`   Input:  ${inputPath}`);
+        console.log(`   Input:  ${isUrl ? '(URL) ' : '(File) '}${inputFile}`);
         console.log(`   Output: ${outputPath}`);
         console.log(`   Format: ${format.toUpperCase()}`);
         console.log(`   Quality: ${quality}`);
@@ -114,9 +128,9 @@ async function convertHtmlToImage() {
             deviceScaleFactor: 1
         });
 
-        // Load HTML file
-        const fileUrl = `file://${inputPath}`;
-        await page.goto(fileUrl, { waitUntil: 'networkidle0' });
+        // Load HTML from URL or file
+        const navigationUrl = isUrl ? inputFile : `file://${path.resolve(inputFile)}`;
+        await page.goto(navigationUrl, { waitUntil: 'networkidle0', timeout: timeout });
 
         // If crop-to-content, get the actual content dimensions
         let screenshotOptions = {
