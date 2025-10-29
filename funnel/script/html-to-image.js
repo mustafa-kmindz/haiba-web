@@ -39,6 +39,7 @@ async function convertHtmlToImage() {
         console.error('  --width=px                 Viewport width (default: 800)');
         console.error('  --height=px                Viewport height (default: 1200)');
         console.error('  --full-page                Capture full scrollable height');
+        console.error('  --crop-to-content          Crop to .wrapper element only (no background)');
         process.exit(1);
     }
 
@@ -82,6 +83,7 @@ async function convertHtmlToImage() {
     const width = parseInt(args.width) || DEFAULT_WIDTH;
     const height = parseInt(args.height) || DEFAULT_HEIGHT;
     const fullPage = args['full-page'] || false;
+    const cropToContent = args['crop-to-content'] || false;
 
     // Validate format
     if (!['png', 'jpeg', 'webp'].includes(format)) {
@@ -116,11 +118,33 @@ async function convertHtmlToImage() {
         const fileUrl = `file://${inputPath}`;
         await page.goto(fileUrl, { waitUntil: 'networkidle0' });
 
-        // Screenshot options
-        const screenshotOptions = {
+        // If crop-to-content, get the actual content dimensions
+        let screenshotOptions = {
             path: outputPath,
             fullPage: fullPage
         };
+
+        if (cropToContent) {
+            // Get the bounding box of the wrapper element
+            const bbox = await page.evaluate(() => {
+                const wrapper = document.querySelector('.wrapper');
+                if (wrapper) {
+                    const rect = wrapper.getBoundingClientRect();
+                    return {
+                        x: rect.left,
+                        y: rect.top,
+                        width: rect.width,
+                        height: rect.height
+                    };
+                }
+                return null;
+            });
+
+            if (bbox) {
+                screenshotOptions.clip = bbox;
+                console.log(`   Cropped to content: ${bbox.width}x${bbox.height}`);
+            }
+        }
 
         // Add format-specific options
         if (format === 'jpeg') {
