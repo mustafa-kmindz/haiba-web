@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thank you for your interest in Haiba. We're preparing your personalized plan.">
+  <title>Thank You - Haiba Enterprises</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #0154a0;
+      --accent: #0891b2;
+      --text-dark: #0f172a;
+      --text-gray: #64748b;
+      --success: #22c55e;
+      --bg-light: #f8fafc;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+      overflow-y: auto;
+      padding-top: 4rem;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    body::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .container {
+      max-width: 700px;
+      background: white;
+      padding: 4rem 3rem;
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(1, 84, 160, 0.25);
+      text-align: center;
+      animation: slideUp 0.8s ease-out;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .success-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 3.5rem;
+      animation: bounce 0.8s ease-in-out, scale-in 0.6s ease-out;
+      box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      animation: fadeInDown 0.8s ease-out;
+    }
+    
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+      font-weight: 500;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    .message-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border-left: 5px solid var(--success);
+      padding: 2rem;
+      margin: 2.5rem 0;
+      border-radius: 12px;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.12);
+      animation: slideInLeft 0.8s ease-out 0.3s both;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    
+    .message-box h3 {
+      color: #15803d;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    
+    .message-box p {
+      color: #166534;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+    
+    .next-steps {
+      background: linear-gradient(135deg, #eff6ff 0%, #e0f7ff 100%);
+      border: 2px solid rgba(8, 145, 178, 0.2);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 2.5rem 0;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(1, 84, 160, 0.12);
+      animation: slideInRight 0.8s ease-out 0.4s both;
+    }
+    
+    .next-steps h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .steps-list {
+      list-style: none;
+      counter-reset: step-counter;
+    }
+    
+    .steps-list li {
+      counter-increment: step-counter;
+      margin-bottom: 1.2rem;
+      padding-left: 2.5rem;
+      position: relative;
+      color: var(--text-gray);
+      line-height: 1.7;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      box-shadow: 0 4px 12px rgba(1, 84, 160, 0.2);
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeInUp 0.8s ease-out 0.5s both;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      box-shadow: 0 8px 20px rgba(1, 84, 160, 0.25);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(1, 84, 160, 0.35);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2.5px solid var(--primary);
+      box-shadow: 0 4px 12px rgba(1, 84, 160, 0.1);
+    }
+    
+    .btn-secondary:hover {
+      background: #f0f9ff;
+      box-shadow: 0 8px 16px rgba(1, 84, 160, 0.15);
+    }
+    
+    .contact-info {
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 2px solid #e2e8f0;
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      animation: fadeInUp 0.8s ease-out 0.6s both;
+    }
+    
+    .contact-info p {
+      margin: 0.75rem 0;
+      font-weight: 500;
+    }
+    
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-info a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    
+    .what-happens-next {
+      background: linear-gradient(135deg, rgba(1, 84, 160, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%);
+      border: 1px solid rgba(8, 145, 178, 0.2);
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    
+    .what-happens-next p {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin: 0.5rem 0;
+      font-weight: 500;
+    }
+    
+    .timeline {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 0 1rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .timeline-item {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      font-weight: 500;
+    }
+    
+    .timeline-item strong {
+      color: var(--primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+    
+    @keyframes scale-in {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .container {
+        padding: 2.5rem 1.5rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .timeline {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      .success-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+      }
+      
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      
+      .next-steps {
+        padding: 1.5rem;
+      }
+      
+      .message-box {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Success Icon -->
+    <div class="success-icon">✓</div>
+
+    <!-- Main Message -->
+    <h1>Your Million-Dollar Idea Just Got Real 🚀</h1>
+    <p class="subtitle">You took the first step. Now let's make sure no one else beats you to it. Your idea, your execution, your empire.</p>
+
+    <!-- Success Message -->
+    <div class="message-box">
+      <h3>✓ Great News! You're On the Path</h3>
+      <p>Everything you shared is protected. Now let's build something real. Check your email for next steps — we'll be in touch within 24 hours.</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="what-happens-next">
+      <p><strong>Your Idea → Reality in 4 Weeks (And It's ALL Yours)</strong></p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>24 hrs</strong>
+          <span>We Review</span>
+        </div>
+        <span style="color: #cbd5e1; font-weight: bold;">→</span>
+        <div class="timeline-item">
+          <strong>Week 1</strong>
+          <span>NDA Signed</span>
+        </div>
+        <span style="color: #cbd5e1; font-weight: bold;">→</span>
+        <div class="timeline-item">
+          <strong>Week 2-3</strong>
+          <span>Building</span>
+        </div>
+        <span style="color: #cbd5e1; font-weight: bold;">→</span>
+        <div class="timeline-item">
+          <strong>Week 4</strong>
+          <span>You Own It</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="next-steps">
+      <h3>🎯 What Happens Next</h3>
+      <ol class="steps-list">
+        <li><strong>Review</strong> - We analyze your vision (24 hours)</li>
+        <li><strong>Discovery Call</strong> - 30 minutes to lock down scope & timeline</li>
+        <li><strong>Build</strong> - We code your prototype (2-4 weeks)</li>
+        <li><strong>You Test</strong> - Real users. Real feedback. Real data.</li>
+        <li><strong>Decision</strong> - Scale it, iterate it, or learn from it. Your call.</li>
+      </ol>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-buttons">
+      <a href="booking.html" class="btn btn-primary">Book Your Call</a>
+      <a href="../index.html" class="btn btn-secondary">Back to Home</a>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <p><strong>Let's Move Fast</strong></p>
+      <p>📞 <a href="tel:+97333185642">+973-33185642</a> | 📧 <a href="mailto:enquiry@haiba.co">enquiry@haiba.co</a></p>
+      <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #94a3b8;">
+        We'll be in touch within 24 hours. 🚀
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Celebration animation on page load
+    window.addEventListener('load', () => {
+      console.log('[FUNNEL] Thank you page viewed - LEAD CONVERTED');
+    });
+    
+    // Get email from URL parameter if available
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    
+    if (email) {
+      console.log('[FUNNEL] Lead email:', email);
+    }
+    
+    // Track this as a conversion event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        'conversion_label': 'haiba_lead_captured',
+        'value': 1.0,
+        'currency': 'USD'
+      });
+    }
+    
+    // Add smooth scroll behavior
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+      });
+    });
+  </script>
+</body>
+</html>

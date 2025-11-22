@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Proof of Concept - Turn Your Idea Into Reality. Zero Cost. Zero Risk. 100% Innovation.">
+  <meta name="keywords" content="Free POC, MVP, Startup, Product Development, Prototype">
+  <meta name="author" content="Haiba Enterprises">
+  <title>FREE Proof of Concept - Haiba Enterprises</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #0154a0;
+      --accent: #0891b2;
+      --success: #22c55e;
+      --text-dark: #0f172a;
+      --text-gray: #64748b;
+      --bg-light: #f8fafc;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-dark);
+      background-color: white;
+      line-height: 1.6;
+    }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    
+    /* HEADER */
+    header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a5490 0%, #0891b2 100%);
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+    }
+    
+    .hero-tagline {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    
+    .highlight-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid white;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    /* PHASES SECTION */
+    .phases {
+      padding: 5rem 0;
+      background: var(--bg-light);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .phases-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      position: relative;
+    }
+    
+    .phase-card {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      border-top: 4px solid var(--accent);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .phase-card:hover {
+      box-shadow: 0 12px 24px rgba(8, 145, 178, 0.15);
+      transform: translateY(-4px);
+    }
+    
+    .phase-number {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .phase-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .phase-card p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    
+    .phase-duration {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      background: #e0f7ff;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    
+    /* WHAT'S INCLUDED */
+    .included {
+      padding: 5rem 0;
+    }
+    
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .included-item {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .included-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--success), #16a34a);
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    .included-content h4 {
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+    
+    .included-content p {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+    
+    /* SUCCESS STORIES */
+    .success-stories {
+      padding: 5rem 0;
+      background: var(--bg-light);
+    }
+    
+    .story-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--success);
+      margin-bottom: 2rem;
+    }
+    
+    .story-quote {
+      font-style: italic;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    
+    .story-author {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    
+    .story-stat {
+      display: inline-block;
+      background: #e0f7ff;
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin: 0 0.5rem 0 0;
+    }
+    
+    /* CTA SECTION */
+    .final-cta {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 4rem 0;
+    }
+    
+    .final-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .final-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* FAQ */
+    .faq {
+      padding: 5rem 0;
+    }
+    
+    .faq-item {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      margin-top: 1rem;
+      color: var(--text-gray);
+      display: none;
+      line-height: 1.8;
+    }
+    
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: #1a1a2e;
+      color: #ccc;
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .final-cta h2 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo-link">
+        <img src="../images/logo-5.png" alt="Haiba Logo" style="height: 40px;">
+        <span>HAIBA</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="highlight-badge">✨ 100% FREE • 0 RISK • 0 COMMITMENT</div>
+      <h1>Turn Your Idea Into Reality</h1>
+      <p class="hero-subtitle">We build your proof-of-concept for FREE. No strings attached.</p>
+      <p class="hero-tagline">See your vision come to life. Test it. Validate it. Decide if it's market-ready.</p>
+      <a href="booking.html" class="btn btn-primary" style="margin-top: 2rem;">
+        Book Your Kickoff Call →
+      </a>
+    </div>
+  </section>
+
+  <!-- THE JOURNEY -->
+  <section class="phases">
+    <div class="container">
+      <div class="section-header">
+        <h2>Your POC Journey</h2>
+        <p>From idea to market-ready product in 6 phases</p>
+      </div>
+
+      <div class="phases-timeline">
+        <div class="phase-card">
+          <div class="phase-number">1</div>
+          <h3>Ideation</h3>
+          <p>You describe your vision. What problem does it solve? Who are your customers? What's the market opportunity?</p>
+          <span class="phase-duration">Kickoff: 30 mins</span>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">2</div>
+          <h3>FREE POC Build</h3>
+          <p>We design and build a working prototype at zero cost. You get a live demo, working code, and clear documentation.</p>
+          <span class="phase-duration">2-4 weeks</span>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">3</div>
+          <h3>Validation</h3>
+          <p>Test with real data. Gather user feedback. We provide analysis: Is it market-ready? What needs refinement?</p>
+          <span class="phase-duration">1-2 weeks</span>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">4</div>
+          <h3>Go/No-Go Decision</h3>
+          <p>Clear insights on market viability. If "go" → we scale to production. If "no" → you learned for free.</p>
+          <span class="phase-duration">Decision meeting</span>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">5</div>
+          <h3>Production Build</h3>
+          <p>Full production-grade application. Enterprise security, scalability, compliance, monitoring, and support.</p>
+          <span class="phase-duration">4-8 weeks</span>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">6</div>
+          <h3>Go-to-Market</h3>
+          <p>Launch strategy. Marketing support. Investor presentations. Distribution channels. Global scaling.</p>
+          <span class="phase-duration">Ongoing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED IN FREE POC -->
+  <section class="included">
+    <div class="container">
+      <div class="section-header">
+        <h2>What's Included in Your FREE POC?</h2>
+        <p>Everything you need to see your idea working</p>
+      </div>
+
+      <div class="included-grid">
+        <div class="included-item">
+          <div class="included-icon">✓</div>
+          <div class="included-content">
+            <h4>Concept Design</h4>
+            <p>Technical architecture and UI/UX mockups</p>
+          </div>
+        </div>
+
+        <div class="included-item">
+          <div class="included-icon">✓</div>
+          <div class="included-content">
+            <h4>Working Prototype</h4>
+            <p>Live, functional demo of your core idea</p>
+          </div>
+        </div>
+
+        <div class="included-item">
+          <div class="included-icon">✓</div>
+          <div class="included-content">
+            <h4>Sample Data Integration</h4>
+            <p>Real-world data flows to test functionality</p>
+          </div>
+        </div>
+
+        <div class="included-item">
+          <div class="included-icon">✓</div>
+          <div class="included-content">
+            <h4>User Testing</h4>
+            <p>Feedback from 5-10 target users</p>
+          </div>
+        </div>
+
+        <div class="included-item">
+          <div class="included-icon">✓</div>
+          <div class="included-content">
+            <h4>Viability Report</h4>
+            <p>Clear go/no-go analysis with market insights</p>
+          </div>
+        </div>
+
+        <div class="included-item">
+          <div class="included-icon">✓</div>
+          <div class="included-content">
+            <h4>Production Roadmap</h4>
+            <p>Clear path from POC to full production</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS STORIES -->
+  <section class="success-stories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Success Stories</h2>
+        <p>Real ideas that became real businesses</p>
+      </div>
+
+      <div class="story-card">
+        <div style="margin-bottom: 1rem;">
+          <span class="story-stat">From POC → Production</span>
+          <span class="story-stat">6 months</span>
+          <span class="story-stat">$2.1M Revenue/Year</span>
+        </div>
+        <p class="story-quote">
+          "We had a brilliant idea but zero idea how to build it. Haiba's free POC showed us exactly what was possible. We saw it working, got excited, and went to production. Now we're selling to enterprises across the Middle East."
+        </p>
+        <p class="story-author">— Ahmed Al-Mansouri, CEO, DataFlow Systems (UAE)</p>
+      </div>
+
+      <div class="story-card">
+        <div style="margin-bottom: 1rem;">
+          <span class="story-stat">From POC → Startup</span>
+          <span class="story-stat">3 months</span>
+          <span class="story-stat">Series A Funding Raised</span>
+        </div>
+        <p class="story-quote">
+          "The free POC helped us validate our market before investing our own money. When investors saw the working demo, they instantly understood the value. Raised $5M Series A in 3 months."
+        </p>
+        <p class="story-author">— Priya Sharma, Co-Founder, SmartOps AI (India)</p>
+      </div>
+
+      <div class="story-card">
+        <div style="margin-bottom: 1rem;">
+          <span class="story-stat">From Idea → Intrapreneur</span>
+          <span class="story-stat">4 months</span>
+          <span class="story-stat">Internal Department Created</span>
+        </div>
+        <p class="story-quote">
+          "I pitched my idea to management but they were skeptical. Haiba built the POC for free. We demoed it. They approved a full budget. Now I'm heading a new innovation division in our company."
+        </p>
+        <p class="story-author">— Mohammed Al-Kaabi, Innovation Lead, Petrocorp (Bahrain)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know</p>
+      </div>
+
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>Why is the POC completely free?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          We believe in the power of ideas. We want to remove barriers for innovators. If we can't find a way to work with you on POC, we won't ask you to invest. If the idea is good, we both benefit from scaling it together.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How is this different from hiring a dev agency?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Typical agencies charge $20-50K upfront for POCs. We build for free. Why? Because we share your vision. If your POC succeeds, we're your partner through scale. We win when you win.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What if the POC shows the idea isn't viable?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          You still have value: real market feedback, technical learnings, and a pivot direction. You saved months and thousands in development. Many successful startups pivot based on POC feedback.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How long does the FREE POC take?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          2-4 weeks for a solid MVP. Depends on complexity. We'll discuss scope in your kickoff call and give you a realistic timeline.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What happens after the POC?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          You have three options: (1) Scale with us to production, (2) Take the code and build yourself, (3) Shelve it. No obligations. If you choose option 1, we discuss production roadmap and investment.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I own the code?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes. The POC code is yours. You can use it however you want. If you scale with us, we discuss IP ownership and licensing as part of the production contract.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What types of ideas do you build?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Any tech idea: AI/ML, web apps, mobile apps, IoT, data platforms, automation, SaaS, etc. Industries: industrial, healthcare, fintech, e-commerce, education, etc. If it's a good idea, we're interested.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you sign NDAs?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Absolutely. We'll sign any reasonable NDA you need before you share your idea.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="container">
+    <div class="final-cta">
+      <h2>Ready to Turn Your Idea Into Reality?</h2>
+      <p>No investment. No risk. Just innovation. Let's build something great.</p>
+      <a href="booking.html" class="btn btn-primary">Get Your FREE POC</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Haiba Enterprises. All rights reserved. | <a href="../index.html">Home</a> | <a href="../solutions.html">Solutions</a> | <a href="../index.html#contact">Contact</a></p>
+  </footer>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Haiba Solutions - AI-Powered Industrial & Digital Solutions. Machine Monitoring, Predictive Maintenance, AI Calling Systems, and more.">
+  <meta name="keywords" content="Industrial Solutions, AI Monitoring, Predictive Maintenance, AI Calling, Document Management, Drone Inspection">
+  <meta name="author" content="Haiba Enterprises">
+  <meta property="og:title" content="Haiba Solutions - Innovative Industrial Technologies">
+  <meta property="og:description" content="Explore our comprehensive suite of AI-powered industrial and digital solutions.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1e40af">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="canonical" href="https://haiba.co/solutions.html">
+
+  <title>Haiba Solutions - AI-Powered Industrial Technologies</title>
+  
+  <script type="application/ld+json" src="schema.json"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <script defer src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <style>
+    /* ======================================== 
+       SOLUTIONS PAGE SPECIFIC STYLES
+       ======================================== */
+
+    .solutions-hero {
+      background: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+      color: white;
+      padding: 8rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solutions-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .solutions-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .solutions-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .solutions-hero p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 1;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      line-height: 1.6;
+    }
+
+    /* Solutions Grid */
+    .solutions-container {
+      padding: 5rem 0;
+      background: #f8fafc;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .solution-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1e40af, #0891b2);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .solution-card:hover {
+      border-color: #0891b2;
+      box-shadow: 0 12px 24px rgba(14, 165, 233, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .solution-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .solution-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .solution-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .solution-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .solution-card p {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Category Sections */
+    .solution-category {
+      margin-bottom: 5rem;
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .category-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .category-header p {
+      font-size: 1rem;
+      color: #64748b;
+    }
+
+    /* Special Sections */
+    .special-solutions {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-top: 3rem;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+
+    .special-solutions:hover {
+      border-color: #0891b2;
+      box-shadow: 0 12px 24px rgba(14, 165, 233, 0.1);
+    }
+
+    .special-solutions h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .special-solutions .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .special-solutions p {
+      color: #64748b;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .special-solutions ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .special-solutions li {
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      position: relative;
+      color: #64748b;
+    }
+
+    .special-solutions li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #0891b2;
+      font-weight: bold;
+    }
+
+    /* CTA Section */
+    .solutions-cta {
+      background: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solutions-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .solutions-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 1;
+    }
+
+    .solutions-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 1;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: white;
+      color: #1e40af;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid white;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-cta:hover {
+      background: transparent;
+      color: white;
+      border-color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .solutions-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .solutions-hero p {
+        font-size: 1rem;
+      }
+
+      .category-header h2 {
+        font-size: 2rem;
+      }
+
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .special-solutions {
+        padding: 2rem;
+      }
+
+      .solutions-cta h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .solutions-hero {
+        padding: 3rem 1rem;
+      }
+
+      .solutions-hero h1 {
+        font-size: 2rem;
+      }
+
+      .solutions-container {
+        padding: 2rem 1rem;
+      }
+
+      .category-header h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER/NAVIGATION -->
+  <header class="header">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="index.html" class="logo">
+          <img src="images/logo-5.png" alt="Haiba Enterprises Logo" class="logo-img">
+          <span>HAIBA</span>
+        </a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link" style="color: #0891b2;">Solutions</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="solutions-hero">
+    <div class="solutions-hero-content">
+      <div class="container">
+        <h1 data-aos="fade-up">Innovative Solutions Built for Your Business</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Explore our comprehensive suite of AI-powered, intelligent industrial and digital solutions designed to transform your operations and drive measurable results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS CONTAINER -->
+  <div class="solutions-container">
+    <div class="container">
+
+      <!-- OPERATIONAL EXCELLENCE SECTION -->
+      <div class="solution-category">
+        <div class="category-header">
+          <h2>Operational Excellence</h2>
+          <p>Monitor, predict, and optimize your industrial operations in real-time</p>
+        </div>
+
+        <div class="solutions-grid">
+          <div class="solution-card" data-aos="fade-up">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>Real-time Machine Health Monitoring</h3>
+            <p>Track machine torque, run status, and vibration patterns with customizable sensors. Receive instant alerts to prevent failures and ensure continuous uptime.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20"></path>
+                <path d="M4.22 4.22l11.31 11.31M4.22 19.78l11.31-11.31"></path>
+              </svg>
+            </div>
+            <h3>Predictive Equipment Maintenance</h3>
+            <p>Leverage machine learning to plan maintenance strategically. Reduce unplanned downtime and extend equipment lifespan with data-driven insights.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"></path>
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              </svg>
+            </div>
+            <h3>Machine Utilization Optimization</h3>
+            <p>Analyze usage patterns with ML algorithms to optimize production scheduling, increase efficiency, and maximize throughput.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3>QC/Customer Auto-Reply Portal</h3>
+            <p>Deploy an intelligent chatbot for instant QC query responses and customer support. Improve efficiency and response times 24/7.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3>Project Timeline & Delay Prediction</h3>
+            <p>Analyze historical data, resource allocation, and external factors to proactively identify potential delays and support mitigation strategies.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3>Automated Email Renewal Alerts</h3>
+            <p>Email automation for contract renewals, safety maintenance, and compliance deadlines with smart, personalized reminders triggered by real-time events.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAFETY & COMPLIANCE SECTION -->
+      <div class="solution-category">
+        <div class="category-header">
+          <h2>Safety & Compliance</h2>
+          <p>Ensure operational safety and meet all compliance requirements</p>
+        </div>
+
+        <div class="solutions-grid">
+          <div class="solution-card" data-aos="fade-up">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3>Shutdown Procedure & Safety Verification</h3>
+            <p>Automated systems for tracking shutdown compliance, personnel notifications, and safety verification through Plantwise integration for smooth operations.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h3>Personnel History & ID System</h3>
+            <p>Management of personnel history and ID filtering for instantaneous access and enhanced compliance reporting through Plantwise integration.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3>HR System Maintenance & Compliance</h3>
+            <p>Automation of HR data management, compliance checks, and document archival with auto-alerts for certifications, expiring contracts, and missing requirements.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m7-4V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2z"></path>
+              </svg>
+            </div>
+            <h3>Risk Assessment & Compliance Tracking</h3>
+            <p>Comprehensive tracking of risks and compliance requirements with alerts for timely maintenance and certification updates.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANALYTICS & INSIGHTS SECTION -->
+      <div class="solution-category">
+        <div class="category-header">
+          <h2>Analytics & Insights</h2>
+          <p>Transform data into actionable intelligence for better decision-making</p>
+        </div>
+
+        <div class="solutions-grid">
+          <div class="solution-card" data-aos="fade-up">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </div>
+            <h3>Executive Dashboard Suite (MIS)</h3>
+            <p>Real-time dashboards for monitoring KPIs with drill-down capabilities and insights to support instant decision-making at every level.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20"></path>
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              </svg>
+            </div>
+            <h3>Automated Performance Reporting</h3>
+            <p>Daily and weekly reports pulling data from multiple sources into ready-to-use formats like PPT or PDF for efficient communication and planning.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"></path>
+              </svg>
+            </div>
+            <h3>Automated Asset Inspection</h3>
+            <p>Systemic inspection of your asset base to detect defects, wear, and damage—enhancing inspection efficiency and reliability.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROCUREMENT & SUPPLY CHAIN SECTION -->
+      <div class="solution-category">
+        <div class="category-header">
+          <h2>Procurement & Supply Chain</h2>
+          <p>Streamline procurement and optimize supply chain operations</p>
+        </div>
+
+        <div class="solutions-grid">
+          <div class="solution-card" data-aos="fade-up">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="12" cy="5" r="1"></circle>
+                <circle cx="12" cy="19" r="1"></circle>
+                <path d="M12 8v8"></path>
+                <path d="M8 10l-2.5-2.5M8 14l-2.5 2.5M16 10l2.5-2.5M16 14l2.5 2.5"></path>
+              </svg>
+            </div>
+            <h3>RFQ Analyzer</h3>
+            <p>Simplify pump selection while improving accuracy and saving significant time in your procurement process with intelligent analysis.</p>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"></path>
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              </svg>
+            </div>
+            <h3>Purchase Order Consolidation</h3>
+            <p>Integration of monthly POs into an intelligent system that auto-manages supplier follow-ups, automates communications, and provides real-time visibility.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPECIAL SOLUTIONS SECTION -->
+      <div class="special-solutions" data-aos="fade-up">
+        <h3>
+          <svg style="width: 28px; height: 28px; color: #0891b2;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M2 12h20M7 7h10M7 12h10M7 17h10"></path>
+          </svg>
+          BolGini: AI Voice Communication Platform
+          <span class="badge">ADVANCED AI</span>
+        </h3>
+        <p><strong>Real-time AI outbound and inbound calling system</strong> available 24/7 for:</p>
+        <ul>
+          <li>Collect feedback and conduct surveys intelligently</li>
+          <li>Schedule appointments with natural conversations</li>
+          <li>Qualify sales leads automatically</li>
+          <li>Provide FAQ support and customer assistance round-the-clock</li>
+          <li>Seamless integration with your existing systems</li>
+        </ul>
+      </div>
+
+      <div class="special-solutions" data-aos="fade-up" data-aos-delay="100">
+        <h3>
+          <svg style="width: 28px; height: 28px; color: #0891b2;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M2 12h20"></path>
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+          </svg>
+          AI Audit Management
+          <span class="badge">COMPLIANCE</span>
+        </h3>
+        <p>Comprehensive audit management powered by artificial intelligence to ensure compliance, identify risks, and generate actionable insights for continuous improvement.</p>
+      </div>
+
+      <div class="special-solutions" data-aos="fade-up" data-aos-delay="200">
+        <h3>
+          <svg style="width: 28px; height: 28px; color: #0891b2;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          Transmittal & Document Management
+          <span class="badge">ORGANIZATION</span>
+        </h3>
+        <p>Intelligent transmittal management and document control system designed for secure storage, version control, audit trails, and streamlined workflows across your entire organization.</p>
+      </div>
+
+      <div class="special-solutions" data-aos="fade-up" data-aos-delay="300">
+        <h3>
+          <svg style="width: 28px; height: 28px; color: #0891b2;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          AI & Drone-Based Infrastructure Inspection
+          <span class="badge">INNOVATIVE</span>
+        </h3>
+        <p>Advanced inspection of large building and factory infrastructure using AI-powered drones to detect structural issues, assess damage, identify maintenance needs, and generate detailed reports in minutes instead of days.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <section class="container" data-aos="fade-up">
+    <div class="solutions-cta">
+      <h2>Ready to Explore These Solutions?</h2>
+      <p>Connect with our team to discuss how these innovative solutions can transform your operations.</p>
+      <a href="index.html#contact" class="btn-cta">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About Haiba</h4>
+          <p>Integrating Industry Evolution With Digital Revolution through comprehensive industrial solutions and cutting-edge technology.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Haiba Enterprises. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true,
+    });
+  </script>
+</body>
+</html>

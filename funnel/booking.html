@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book Your Free POC Kickoff Call with Haiba - 30 minutes to validate your innovation idea">
+  <meta name="keywords" content="Calendar, Booking, Free POC, Kickoff Call, Innovation">
+  <meta name="author" content="Haiba Enterprises">
+  <title>Book Your Free POC Kickoff Call - Haiba</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #0154a0;
+      --accent: #0891b2;
+      --text-dark: #0f172a;
+      --text-gray: #64748b;
+      --bg-light: #f8fafc;
+      --success: #22c55e;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-dark);
+      background-color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* ===== HEADER ===== */
+    header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: slideInDown 0.6s ease-out;
+    }
+    
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-link:hover {
+      transform: scale(1.05);
+    }
+    
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+      line-height: 1.8;
+    }
+    
+    .hero-cta {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* ===== MAIN BOOKING SECTION ===== */
+    .booking-section {
+      padding: 4rem 0;
+      background: var(--bg-light);
+    }
+    
+    .booking-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    
+    .booking-info {
+      animation: slideInLeft 0.8s ease-out;
+    }
+    
+    .booking-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    
+    .booking-info p {
+      font-size: 1rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .info-list {
+      list-style: none;
+      margin: 2rem 0;
+    }
+    
+    .info-list li {
+      padding: 1rem 0 1rem 2.5rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+    
+    .info-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, var(--success), #16a34a);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    
+    .booking-highlight {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 100%);
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .booking-highlight strong {
+      color: var(--primary);
+    }
+    
+    /* ===== CALENDAR EMBED ===== */
+    .booking-calendar {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      animation: slideInRight 0.8s ease-out;
+    }
+    
+    .booking-calendar h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      text-align: center;
+    }
+    
+    .calendar-embed {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .calendar-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .calendar-note {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+    
+    /* ===== WHAT HAPPENS NEXT ===== */
+    .next-steps {
+      padding: 4rem 0;
+    }
+    
+    .next-steps h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      text-align: center;
+    }
+    
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+    
+    .step-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .step-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px rgba(8, 145, 178, 0.15);
+    }
+    
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin: 0 auto 1rem;
+    }
+    
+    .step-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+    }
+    
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+    
+    /* ===== FAQ ===== */
+    .faq-section {
+      padding: 4rem 0;
+      background: var(--bg-light);
+    }
+    
+    .faq-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      text-align: center;
+    }
+    
+    .faq-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+    }
+    
+    .faq-question {
+      padding: 1.5rem;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #f8fafc;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    
+    .faq-answer p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .bottom-cta {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+    
+    .bottom-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .bottom-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1a1a2e;
+      color: #ccc;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 968px) {
+      .booking-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .booking-calendar {
+        padding: 1rem;
+      }
+      
+      .calendar-embed {
+        height: 400px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero {
+        padding: 2rem 0;
+      }
+      
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      
+      .booking-info h2 {
+        font-size: 1.5rem;
+      }
+      
+      .booking-calendar {
+        padding: 1rem;
+      }
+      
+      .calendar-embed {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="../index.html" class="logo-link">
+        <img src="../images/logo-5.png" alt="Haiba Logo" style="height: 40px;">
+        <span>HAIBA</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Book Your FREE POC Kickoff Call</h1>
+        <p class="hero-subtitle">
+          30 minutes to validate your innovation idea. No cost, no commitment—just a conversation about turning your vision into reality.
+        </p>
+        <a href="#calendar" class="hero-cta">Pick Your Time Below ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING SECTION -->
+  <section class="booking-section">
+    <div class="container">
+      <div class="booking-container">
+        <!-- Left: Info -->
+        <div class="booking-info">
+          <h2>What to Expect</h2>
+          <p>
+            During our 30-minute kickoff call, we'll dive deep into your innovation idea and understand exactly what you're building.
+          </p>
+
+          <ul class="info-list">
+            <li><strong>Understand Your Vision</strong> - What problem are you solving?</li>
+            <li><strong>Define Scope</strong> - What should the FREE POC include?</li>
+            <li><strong>Lock Timeline</strong> - When do you need it ready?</li>
+            <li><strong>Answer Questions</strong> - Everything about the process</li>
+            <li><strong>Discuss Budget</strong> - For production (if POC succeeds)</li>
+          </ul>
+
+          <div class="booking-highlight">
+            <strong>💡 Come Prepared:</strong>
+            <p style="margin-top: 0.5rem; margin-bottom: 0;">
+              Have a clear description of your idea, target market, and what success looks like for your POC ready to discuss.
+            </p>
+          </div>
+
+          <div class="booking-highlight">
+            <strong>✨ You'll Leave With:</strong>
+            <p style="margin-top: 0.5rem; margin-bottom: 0;">
+              Clear understanding of POC scope, timeline, investment for production, and next steps to get started.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Calendar -->
+        <div class="booking-calendar" id="calendar">
+          <h3>Select Your Time</h3>
+          <div id="my-cal-inline-booking" style="width:100%;height:600px;overflow:auto;background:#fff;border-radius:8px;border:1px solid #e2e8f0;"></div>
+          <p class="calendar-note">Select an available time slot. Confirmation will be sent to your email instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="next-steps">
+    <div class="container">
+      <h2>What Happens After Your Call</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Immediate</h3>
+          <p>Email confirmation with meeting details and Google Meet link</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Day 1-2</h3>
+          <p>Kickoff call to lock scope, timeline, and technical requirements</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Day 3</h3>
+          <p>Proposal email with POC details, timeline, and production roadmap</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Week 1</h3>
+          <p>POC development begins—we'll send weekly updates</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h3>Week 2-4</h3>
+          <p>Build, test, refine—resulting in a live demo of your idea</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">6</div>
+          <h3>Week 5</h3>
+          <p>Live demo, validation feedback, and go/no-go decision</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>Why is the POC completely free?</span>
+            <span style="font-size: 1.5rem;">−</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              We believe in the power of ideas. Our mission is to remove barriers for innovators. If your idea is viable and exciting, we both win when it scales to production. We're investing in your success.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How long does a POC take?</span>
+            <span style="font-size: 1.5rem;">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Typically 2-4 weeks, depending on complexity and scope. During your kickoff call, we'll discuss your specific timeline and confirm the POC delivery date.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What if the POC shows the idea isn't viable?</span>
+            <span style="font-size: 1.5rem;">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              You still get value: real market feedback, technical learnings, and a clear pivot direction. You saved months and thousands in development. Many successful companies started by validating a different idea first.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Who owns the POC code?</span>
+            <span style="font-size: 1.5rem;">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              You do. The POC code is yours to keep and use however you want. If you decide to scale with us, we discuss IP ownership and licensing as part of the production contract.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can we use your code if the idea fails?</span>
+            <span style="font-size: 1.5rem;">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes, absolutely. You own the code. Use it to pivot, improve, or share with investors. There are no strings attached to the FREE POC.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What happens if I need to reschedule?</span>
+            <span style="font-size: 1.5rem;">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              No problem! You can reschedule directly through the confirmation email or by visiting your booking link again. We're flexible to work around your schedule.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you work with non-technical founders?</span>
+            <span style="font-size: 1.5rem;">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Absolutely! We work with founders at all levels of technical expertise. Our kickoff call is designed to understand your vision and translate it into technical requirements. You don't need to be technical to have a great idea.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="container">
+    <div class="bottom-cta">
+      <h2>Ready to Turn Your Idea Into Reality?</h2>
+      <p>Book your kickoff call now. It takes just 30 minutes.</p>
+      <a href="#calendar" class="cta-button">Book Your Free Call Now →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Haiba Enterprises. All rights reserved. | <a href="../index.html">Home</a> | <a href="../funnel/poc.html">About POC</a> | <a href="../solutions.html">Solutions</a></p>
+  </footer>
+
+  <script>
+    // Cal.com Embed Script
+    // IMPORTANT: Replace 'your-username' with your actual Cal.com username
+    // And replace 'event-slug' with your event type slug (e.g., 'free-poc-kickoff-call')
+    
+    (function (C, A, L) { 
+      let p = function (a, ar) { a.q.push(ar); }; 
+      let d = C.document; 
+      C.Cal = C.Cal || function () { 
+        let cal = C.Cal; 
+        let ar = arguments; 
+        if (!cal.loaded) { 
+          cal.ns = {}; 
+          cal.q = cal.q || []; 
+          d.head.appendChild(d.createElement("script")).src = A; 
+          cal.loaded = true; 
+        } 
+        if (ar[0] === L) { 
+          const api = function () { p(api, arguments); }; 
+          const namespace = ar[1]; 
+          api.q = api.q || []; 
+          if(typeof namespace === "string"){
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar); 
+          return;
+        } 
+        p(cal, ar); 
+      }; 
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    // Initialize Cal.com with your credentials
+    Cal("init", "booking", {origin:"https://app.cal.com"});
+
+    // Configure inline calendar
+    Cal.ns["booking"]("inline", {
+      elementOrSelector: "#my-cal-inline-booking",
+      config: { 
+        layout: "month_view",
+        theme: "light"
+      },
+      // REPLACE 'your-username' and 'free-poc-kickoff-call' with your actual Cal.com link
+      calLink: "mustafa-kkk/30min"
+    });
+
+    // UI customization
+    Cal.ns["booking"]("ui", {
+      hideEventTypeDetails: false,
+      layout: "month_view",
+      theme: "light"
+    });
+
+    // Track page views
+    console.log('[FUNNEL] Booking calendar page viewed');
+
+    // FAQ toggle functionality
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(i => {
+          if (i !== item) i.classList.remove('active');
+        });
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
+
+    // Track calendar interaction
+    document.getElementById('my-cal-inline-booking').addEventListener('load', () => {
+      console.log('[FUNNEL] Cal.com calendar loaded');
+    });
+
+    // Smooth scroll to calendar
+    document.querySelectorAll('a[href="#calendar"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('[FUNNEL] User scrolled to calendar');
+        document.getElementById('calendar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
