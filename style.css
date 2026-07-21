@@ -653,6 +653,22 @@ a:hover {
   transition: all 0.3s ease;
 }
 
+.service-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.service-card-link:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 4px;
+}
+
+.service-card-link:hover {
+  color: inherit;
+}
+
 .service-card:hover {
   box-shadow: var(--shadow-xl);
   transform: translateY(-8px);
