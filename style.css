@@ -312,37 +312,22 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+  background: #102a43;
   overflow: hidden;
   position: relative;
 }
 
 .hero-bg {
   position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
+  inset: 0;
+  background: url('assets/images/home-hero-industrial-plant.jpg') center / cover no-repeat;
 }
 
 .hero-bg::before {
   content: '';
   position: absolute;
-  bottom: -30%;
-  left: -5%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(8, 145, 178, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: float 8s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(20px); }
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 24, 43, 0.9) 0%, rgba(12, 42, 70, 0.72) 48%, rgba(8, 27, 49, 0.38) 100%);
 }
 
 .hero-content {
@@ -366,17 +351,14 @@ a:hover {
 }
 
 .hero-title {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   animation: slideUp 0.8s ease-out 0.1s both;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--text-gray);
+  color: #ffffff;
   margin-bottom: 2rem;
   animation: slideUp 0.8s ease-out 0.2s both;
 }
@@ -399,7 +381,7 @@ a:hover {
 
 .partners-label {
   font-size: 0.95rem;
-  color: var(--text-gray);
+  color: #ffffff;
   margin-bottom: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
