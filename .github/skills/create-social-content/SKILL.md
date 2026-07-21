@@ -50,8 +50,10 @@ For Haiba Enterprises video generation, use the same text-only branding instruct
 Prompt additions for branded assets:
 
 ```text
-Use Haiba Enterprises branding only as the exact readable text `Haiba Enterprises`. Do not draw or use any logo, icon, lock, network mark, emblem, or brand symbol. Use navy #071426 and white #ffffff base colors with purple #6b198d, violet-blue #5435b0, bright blue #1974c8, and orange #ff6b22 accents. Keep the composition crisp, modern, high contrast, uncluttered, and professional B2B.
+Use Haiba Enterprises branding only as the exact readable text `Haiba Enterprises`. Do not draw or use any logo, icon, lock, network mark, emblem, or brand symbol. Match the existing Haiba website theme: white #ffffff and light backgrounds, deep royal blue #1e40af for headings and primary actions, darker blue #1e3a8a for emphasis, bright blue #3b82f6 for highlights, cyan #0891b2 for secondary accents, and logo blue #0154a0. Keep the composition crisp, modern, high contrast, uncluttered, light, and professional B2B.
 ```
+
+These colors are taken from the existing Haiba website design system and must be preferred for all Haiba assets. Do not introduce the previous purple/orange palette or a dark-first theme unless the user explicitly requests a campaign variation.
 
 ## Orientation and Sizes
 
@@ -152,7 +154,7 @@ Example branded video call:
 
 ```json
 {
-  "prompt": "A short premium enterprise technology brand video with the exact readable text Haiba Enterprises, clean architecture-led motion graphics, secure AI agent workflow lines, navy and white palette with restrained purple, blue, and orange accents, elegant camera movement, no logo, no icon, no lock, no network mark, no brand symbol, no people faces, no clutter.",
+  "prompt": "A short premium enterprise technology brand video with the exact readable text Haiba Enterprises, clean architecture-led motion graphics, white and light backgrounds with deep royal blue #1e40af, darker blue #1e3a8a, bright blue #3b82f6, cyan #0891b2, and logo blue #0154a0 accents, elegant camera movement, no logo, no icon, no lock, no network mark, no brand symbol, no people faces, no clutter.",
   "model": "sora-2",
   "format": "horizontal",
   "seconds": "4",

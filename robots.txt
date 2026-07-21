@@ -12,8 +12,16 @@ Allow: *.gif
 Allow: *.webp
 Allow: *.svg
 
-# Disallow sensitive files
+# Keep private project and campaign support files out of search results.
 Disallow: /backup/
+Disallow: /.github/
+Disallow: /planning/
+Disallow: /funnel/docs/
+Disallow: /funnel/email-templates/
+Disallow: /funnel/script/
+Disallow: /server.js
+Disallow: /package.json
+Disallow: /schema.json
 Disallow: /*.env
 Disallow: /.git/
 Disallow: /.gitignore
@@ -27,11 +35,6 @@ Crawl-delay: 0
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 0
-
-# Specific rules for other crawlers
-User-agent: *
-Crawl-delay: 1
-Request-rate: 30/60
 
 # Sitemap location
 Sitemap: https://haiba.co/sitemap.xml

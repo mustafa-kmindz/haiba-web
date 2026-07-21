@@ -1,0 +1,28 @@
+# Haiba Enterprises
+
+> Haiba Enterprises provides industrial engineering, inspection, certification support, consultancy, and digital transformation services.
+
+## Official website
+
+- Homepage: https://haiba.co/
+- Services: https://haiba.co/services/
+- Contact: https://haiba.co/#contact
+
+## Services
+
+- Plant design: https://haiba.co/services/plant-design/
+- 3D plant modelling: https://haiba.co/services/3d-plant-modelling/
+- Industrial inspection and expediting: https://haiba.co/services/industrial-inspection-expediting/
+- ASME U, U2, and R certification support: https://haiba.co/services/asme-u-u2-r-certification/
+- Industry 5.0 technical and management consultancy: https://haiba.co/services/industry-5-consultancy/
+- AI-driven industrial digital transformation: https://haiba.co/services/ai-industrial-digital-transformation/
+- Industrial software solutions and data security: https://haiba.co/services/industrial-software-data-security/
+
+## Company
+
+Haiba works with industrial teams on engineering delivery, technical readiness, operational improvement, and practical technology adoption. Service descriptions on the official pages define the current scope. Certification support pages describe readiness and coordination support; they do not claim that Haiba grants certification.
+
+## Crawling
+
+- Canonical URL inventory: https://haiba.co/sitemap.xml
+- Crawl policy: https://haiba.co/robots.txt

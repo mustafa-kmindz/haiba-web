@@ -1,0 +1,73 @@
+[1mdiff --git a/.github/instructions/instructions.instructions.md b/.github/instructions/instructions.instructions.md[m
+[1mindex 2e141b0..c660646 100644[m
+[1m--- a/.github/instructions/instructions.instructions.md[m
+[1m+++ b/.github/instructions/instructions.instructions.md[m
+[36m@@ -7,4 +7,65 @@[m [mdescription: Describe when these instructions should be loaded by the agent base[m
+ [m
+ Provide project context and coding guidelines that AI should follow when generating code, answering questions, or reviewing changes.[m
+ [m
+[31m-When creating images, respect the service limit of 10 image creation calls per minute.[m
+\ No newline at end of file[m
+[32m+[m[32mWhen creating images, respect the service limit of 10 image creation calls per minute.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m## Website SEO Requirements[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mApply these requirements whenever creating or modifying a public HTML page, page template, route, image, sitemap, robots file, or structured-data file:[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m- Use one clear search intent per indexable page and write original, useful content for that intent.[m[41m[m
+[32m+[m[32m- Use a unique, descriptive `<title>`, meta description, canonical URL, Open Graph title/description/URL/type/image, and X/Twitter card metadata on every indexable page.[m[41m[m
+[32m+[m[32m- Use exactly one visible, descriptive `<h1>` per page and maintain a logical heading hierarchy with `<h2>` and `<h3>`.[m[41m[m
+[32m+[m[32m- Use lowercase, descriptive, hyphenated URLs. Prefer stable directory paths such as `/services/plant-design/` over vague names, query-only pages, or filenames with unnecessary extensions.[m[41m[m
+[32m+[m[32m- Add inline, valid JSON-LD that matches visible page content. Use the appropriate schema type such as `Organization`, `WebSite`, `WebPage`, `Service`, `BreadcrumbList`, or `Article`.[m[41m[m
+[32m+[m[32m- Use `FAQPage` structured data only when the questions and answers are visibly present and genuinely useful. Never add unsupported reviews, awards, prices, partners, events, or claims to schema.[m[41m[m
+[32m+[m[32m- Use canonical URLs in JSON-LD, internal links, Open Graph data, and sitemaps consistently. Do not include URL fragments, redirects, duplicate pages, private files, or non-indexable campaign pages in the XML sitemap.[m[41m[m
+[32m+[m[32m- Give every meaningful image accurate, natural `alt` text describing what is visible and its purpose. Use `alt=""` for decorative images. Do not stuff keywords into alt text or use the filename as alt text.[m[41m[m
+[32m+[m[32m- Use semantic HTML, accessible labels, keyboard-visible focus states, responsive layouts, sufficient color contrast, descriptive link text, and reduced-motion support.[m[41m[m
+[32m+[m[32m- Do not hide important information in images. Repeat any important visual label, claim, or service name as nearby HTML text.[m[41m[m
+[32m+[m[32m- Validate HTML, links, metadata, canonical URLs, JSON-LD, sitemap URLs, mobile rendering, performance, and accessibility before considering a page complete.[m[41m[m
+[32m+[m[32m- Do not publish unsupported statistics, certifications, customer logos, partnerships, locations, reviews, or technical claims. Confirm business facts before adding them to page copy or structured data.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m## Image Creation Workflow[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mUse the `/create-social-content` skill whenever a page needs a new marketing, hero, service, industry, campaign, social, banner, or share image. Use the local MCP `create_marketing_image` tool for still images. Read and follow `.github/skills/create-social-content/SKILL.md` before invoking the tool.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mFor website photography and feature images:[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m- Prefer `format: "horizontal"` with a 16:9 composition for hero and service images. Create a separate 1200x630 social-share crop where needed.[m[41m[m
+[32m+[m[32m- Prefer `outputFormat: "jpeg"` and a descriptive lowercase hyphenated filename ending in `.jpg` for photographic assets.[m[41m[m
+[32m+[m[32m- Always pass `optimize: true`, `quality: "medium"` unless the task specifies otherwise, `outputFileName`, and `outputDirectory` when using the MCP tool.[m[41m[m
+[32m+[m[32m- Use descriptive asset folders such as `assets/images/services/`, `assets/images/industries/`, or `assets/social/`; do not scatter generated files in the repository root.[m[41m[m
+[32m+[m[32m- Review the generated image before publishing. Check visual accuracy, readable text, spelling, mobile crop, contrast, compression artifacts, dimensions, and file size.[m[41m[m
+[32m+[m[32m- Add explicit `width` and `height` attributes in HTML. Use `fetchpriority="high"` only for the primary above-the-fold image and `loading="lazy"` for below-the-fold images.[m[41m[m
+[32m+[m[32m- Use responsive image markup with `srcset` and `sizes` when multiple image sizes are available. Prefer WebP derivatives through `<picture>` when supported, with the optimized JPG as the fallback.[m[41m[m
+[32m+[m[32m- Do not use generated images as a substitute for accessible HTML content. The page heading, caption, nearby text, and alt text must communicate the subject independently.[m[41m[m
+[32m+[m[32m- Never generate or publish invented certification marks, partner logos, customer logos, UI screenshots containing false data, or misleading industrial equipment.[m[41m[m
+[32m+[m[32m- Respect the service limit of 10 image creation calls per minute. For batches, group the requests deliberately and avoid parallel calls that could exceed the limit.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m## Branded Image Prompt Standard[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mEvery Haiba Enterprises image prompt must describe the subject, setting, composition, lighting, visual style, brand colors, exact readable text, and exclusions. Use the following template and replace all bracketed values:[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m```text[m[41m[m
+[32m+[m[32mCreate a premium horizontal 16:9 website feature image for Haiba Enterprises about [SERVICE NAME].[m[41m[m
+[32m+[m[32mShow [SPECIFIC SUBJECT, such as a pressure vessel design review, plant 3D model, supplier inspection,[m[41m[m
+[32m+[m[32mindustrial AI dashboard, or secure industrial software workflow] in a realistic [FACILITY OR WORKPLACE][m[41m[m
+[32m+[m[32menvironment. Use a clean editorial B2B composition with the main subject clearly visible on [LEFT/RIGHT][m[41m[m
+[32m+[m[32mand generous uncluttered space for typography on [LEFT/RIGHT]. Use realistic industrial materials,[m[41m[m
+[32m+[m[32mtechnically credible details, sharp focus, professional [DAYLIGHT/CONTROLLED TECHNICAL] lighting,[m[41m[m
+[32m+[m[32mand a confident engineering tone. Use Haiba colors as restrained accents: navy #071426, white #ffffff,[m[41m[m
+[32m+[m[32mpurple #6b198d, violet-blue #5435b0, bright blue #1974c8, and orange #ff6b22.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mInclude the exact readable text "Haiba Enterprises" and the exact short service label[m[41m[m
+[32m+[m[32m"[SHORT SERVICE LABEL]" in clean, high-contrast, professional typography. Spell both text strings[m[41m[m
+[32m+[m[32mexactly, keep them fully visible and unobstructed, and repeat the service label in the page HTML.[m[41m[m
+[32m+[m[32mThe image must be understandable on its own at a glance, without relying on surrounding page copy.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mDo not draw or use a logo, icon, lock, network mark, emblem, certification mark, partner logo,[m[41m[m
+[32m+[m[32mcustomer logo, watermark, or any brand symbol. Do not add any text other than the two exact text[m[41m[m
+[32m+[m[32mstrings requested. Do not show distorted people, unsafe working practices, fake technical data,[m[41m[m
+[32m+[m[32mgeneric stock-photo styling, unrelated equipment, excessive visual clutter, or illegible lettering.[m[41m[m
+[32m+[m[32m```[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mFor each generated image, write a page-specific alt text after reviewing the actual output. Example: `Pressure vessel and piping design review displayed in a plant engineering workspace` rather than `industrial engineering services image`.[m
+\ No newline at end of file[m
