@@ -177,6 +177,14 @@ a:hover {
   align-items: center;
 }
 
+.nav-list > li:nth-child(1) { order: 1; }
+.nav-list > li.nav-item-has-submenu { order: 2; }
+.nav-list > li:has(> .nav-link[href*="solutions"]) { order: 3; }
+.nav-list > li:has(> .nav-link[href="#"]) { order: 3; }
+.nav-list > li:has(> .nav-link[href*="about"]) { order: 4; }
+.nav-list > li:has(> .nav-link[href*="#about"]) { order: 4; }
+.nav-list > li:has(> .nav-link[href*="contact"]) { order: 5; }
+
 .nav-item-has-submenu {
   position: relative;
 }
