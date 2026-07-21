@@ -1156,6 +1156,40 @@ a:hover {
    FOOTER
    ======================================== */
 
+.site-footer {
+  padding: 2rem 0;
+  background: #0f285f;
+  color: #dbeafe;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #dbeafe;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+}
+
+.footer-links a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: #7dd3fc;
+}
+
 .footer {
   background: var(--text-dark);
   color: rgba(255, 255, 255, 0.8);
@@ -1211,6 +1245,13 @@ a:hover {
 .social-links a:hover {
   background: var(--primary);
   transform: translateY(-3px);
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .footer-bottom {
