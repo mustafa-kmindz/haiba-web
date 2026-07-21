@@ -1,6 +1,6 @@
 ---
 name: create-social-content
-description: 'Use when creating social media marketing images or short videos with the local MCP tools create_marketing_image and create_marketing_video. Covers prompts, arguments, text-only KryptoMindz Technologies branding, vertical/horizontal formats, Sora 2 video, output filenames, and result handling.'
+description: 'Use when creating social media marketing images or short videos with the local MCP tools create_marketing_image and create_marketing_video. Covers prompts, arguments, text-only Haiba Enterprises branding, vertical/horizontal formats, Sora 2 video, output filenames, and result handling.'
 argument-hint: 'Describe the social asset, platform/orientation, image or video, brand/copy notes, duration, and filename if needed.'
 ---
 
@@ -11,7 +11,7 @@ Use this skill to create polished social media or marketing assets through the l
 - `create_marketing_image` for still images.
 - `create_marketing_video` for short Sora 2 MP4 videos.
 
-For KryptoMindz Technologies cybersecurity/AI marketing assets, follow the text-only branding guidance in this skill. Treat KMindz only as a short internal name. Do not draw or use any logo, icon, lock, network mark, or brand symbol; use only the visible text `KryptoMindz Technologies` for branding.
+For Haiba Enterprises cybersecurity/AI marketing assets, follow the text-only branding guidance in this skill. Treat KMindz only as a short internal name. Do not draw or use any logo, icon, lock, network mark, or brand symbol; use only the visible text `Haiba Enterprises` for branding.
 
 The skill is named `create-social-content`. The spelling is intentional: lowercase words separated by hyphens, matching the required skill folder name.
 
@@ -21,7 +21,7 @@ Use this skill when the user asks to create, generate, retry, or refine:
 
 - Product marketing images.
 - Branded social images that should follow a text-based brand description.
-- KryptoMindz Technologies branded social or marketing content.
+- Haiba Enterprises branded social or marketing content.
 - Social posts, ads, thumbnails, banners, stories, reels, or campaign creatives.
 - Short product videos or playful promotional clips.
 - Vertical or horizontal assets for social platforms.
@@ -32,25 +32,25 @@ Use this skill when the user asks to create, generate, retry, or refine:
 1. If the user asks for an image, poster, visual, ad creative, thumbnail, or still asset, use `create_marketing_image`.
 2. If the user asks for a video, motion, clip, reel, animation, sound, or Sora output, use `create_marketing_video`.
 3. If the user does not specify image or video, ask one concise clarification unless the wording clearly implies one.
-4. When creating KryptoMindz Technologies assets, use the color and visual-style guidance in this skill. Instruct the generator to use only the text `KryptoMindz Technologies` and not to draw or use any logo, icon, lock, network mark, or brand symbol.
+4. When creating Haiba Enterprises assets, use the color and visual-style guidance in this skill. Instruct the generator to use only the text `Haiba Enterprises` and not to draw or use any logo, icon, lock, network mark, or brand symbol.
 5. If the user asks to try again, keep the same tool and improve only the prompt or arguments that need changing.
 
-## KryptoMindz Technologies Branding
+## Haiba Enterprises Branding
 
-For KryptoMindz Technologies assets, use the color and visual-style guidance below. Generated assets must not draw or use any logo, icon, lock, network mark, or brand symbol.
+For Haiba Enterprises assets, use the color and visual-style guidance below. Generated assets must not draw or use any logo, icon, lock, network mark, or brand symbol.
 
 Use this text-only branding instruction in prompts:
 
 ```text
-Show the brand only as the exact readable text `KryptoMindz Technologies`. Do not draw or use any logo, icon, lock, network mark, emblem, or brand symbol.
+Show the brand only as the exact readable text `Haiba Enterprises`. Do not draw or use any logo, icon, lock, network mark, emblem, or brand symbol.
 ```
 
-For KryptoMindz Technologies video generation, use the same text-only branding instruction in the Sora prompt. The exact readable text `KryptoMindz Technologies` is the only permitted brand identifier.
+For Haiba Enterprises video generation, use the same text-only branding instruction in the Sora prompt. The exact readable text `Haiba Enterprises` is the only permitted brand identifier.
 
 Prompt additions for branded assets:
 
 ```text
-Use KryptoMindz Technologies branding only as the exact readable text `KryptoMindz Technologies`. Do not draw or use any logo, icon, lock, network mark, emblem, or brand symbol. Use navy #071426 and white #ffffff base colors with purple #6b198d, violet-blue #5435b0, bright blue #1974c8, and orange #ff6b22 accents. Keep the composition crisp, modern, high contrast, uncluttered, and professional B2B.
+Use Haiba Enterprises branding only as the exact readable text `Haiba Enterprises`. Do not draw or use any logo, icon, lock, network mark, emblem, or brand symbol. Use navy #071426 and white #ffffff base colors with purple #6b198d, violet-blue #5435b0, bright blue #1974c8, and orange #ff6b22 accents. Keep the composition crisp, modern, high contrast, uncluttered, and professional B2B.
 ```
 
 ## Orientation and Sizes
@@ -152,7 +152,7 @@ Example branded video call:
 
 ```json
 {
-  "prompt": "A short premium enterprise technology brand video with the exact readable text KryptoMindz Technologies, clean architecture-led motion graphics, secure AI agent workflow lines, navy and white palette with restrained purple, blue, and orange accents, elegant camera movement, no logo, no icon, no lock, no network mark, no brand symbol, no people faces, no clutter.",
+  "prompt": "A short premium enterprise technology brand video with the exact readable text Haiba Enterprises, clean architecture-led motion graphics, secure AI agent workflow lines, navy and white palette with restrained purple, blue, and orange accents, elegant camera movement, no logo, no icon, no lock, no network mark, no brand symbol, no people faces, no clutter.",
   "model": "sora-2",
   "format": "horizontal",
   "seconds": "4",
@@ -170,10 +170,10 @@ Before calling a tool, make sure the prompt includes:
 4. Lighting and background.
 5. Composition or camera direction.
 6. Motion and audio cues for video.
-7. Exact `KryptoMindz Technologies` text and color guidance for branded assets, with no logo or brand symbols.
+7. Exact `Haiba Enterprises` text and color guidance for branded assets, with no logo or brand symbols.
 8. Exclusions such as no unwanted logos, no hands, or no extra objects.
 
-For KryptoMindz Technologies branded assets, use the exact readable text `KryptoMindz Technologies` as the only brand identifier. For other assets, avoid asking the model to place readable text unless the user explicitly needs it.
+For Haiba Enterprises branded assets, use the exact readable text `Haiba Enterprises` as the only brand identifier. For other assets, avoid asking the model to place readable text unless the user explicitly needs it.
 
 ## Output Handling
 
