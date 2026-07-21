@@ -1,0 +1,19 @@
+Few suggestions for website upgrade:
+1.	Remove Odoo.
+2.	Our Core competencies should be changed as follows:
+a.	Design and Engineering:
+Inside the box: Engineering design and drawings for pressure vessels, heat exchangers, piping, tank, industry structure, modifications and re-routing, urgent design during plant shutdown and turnaround, Plant 3D modelling,
+b.	Inspection and Expediting 
+Inside the box: ASME and third-party inspection, worldwide expediting for supply orders, third party technical audits, supplier pre-qualifications
+c.	Digital transformation and AI empowerment may be combined into one box.
+d.	Industrial software solutions and Data Security may be combined into one box. 
+3.	What we offer should be changed as follows:
+a.	Plant Design- Pressure Vessel, Piping, Tank, Structural
+b.	3D Modelling- Plant equipment and structure
+c.	Industrial inspection and expediting services
+d.	Complete package for ASME U, U2 & R
+e.	Technical and Management Consultancy- Industry 5.0
+f.	AI driven industrial digital transformation
+g.	Remove: ‘Cloud integration and ERP/CRM solutions’
+h.	Custom application development- Industrial software solutions
+
