@@ -81,6 +81,17 @@
       line-height: 1.6;
     }
 
+    .solution-category-visual {
+      display: block;
+      width: min(100%, 560px);
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      max-height: 230px;
+      margin: 0 auto 2rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+    }
+
     /* Solutions Grid */
     .solutions-container {
       padding: 5rem 0;
@@ -352,6 +363,10 @@
         padding: 2rem 1rem;
       }
 
+      .solution-category-visual {
+        max-height: 220px;
+      }
+
       .category-header h2 {
         font-size: 1.5rem;
       }
@@ -400,6 +415,7 @@
           <h2>Operational Excellence</h2>
           <p>Monitor, predict, and optimize your industrial operations in real-time</p>
         </div>
+        <img class="solution-category-visual" src="assets/images/machine-health-monitoring.jpg" width="1200" height="675" loading="lazy" alt="Industrial machine with sensor-based health monitoring">
 
         <div class="solutions-grid">
           <div class="solution-card" data-aos="fade-up">
@@ -477,6 +493,7 @@
           <h2>Safety & Compliance</h2>
           <p>Ensure operational safety and meet all compliance requirements</p>
         </div>
+        <img class="solution-category-visual" src="assets/images/predictive-maintenance-solutions.jpg" width="1200" height="675" loading="lazy" alt="Industrial maintenance planning beside monitored equipment">
 
         <div class="solutions-grid">
           <div class="solution-card" data-aos="fade-up">
@@ -529,6 +546,7 @@
           <h2>Analytics & Insights</h2>
           <p>Transform data into actionable intelligence for better decision-making</p>
         </div>
+        <img class="solution-category-visual" src="assets/images/industrial-digital-transformation.jpg" width="1200" height="675" loading="lazy" alt="Industrial operations workspace with digital dashboards and workflow data">
 
         <div class="solutions-grid">
           <div class="solution-card" data-aos="fade-up">
